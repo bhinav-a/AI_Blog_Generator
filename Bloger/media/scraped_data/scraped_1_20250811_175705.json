@@ -1,0 +1,2063 @@
+{
+  "url": "https://www.geeksforgeeks.org/python-programming-language/",
+  "title": "Python Tutorial - Learn Python Programming Language - GeeksforGeeks",
+  "meta_description": "Your All-in-One Learning Portal: GeeksforGeeks is a comprehensive educational platform that empowers learners across domains-spanning computer science and programming, school education, upskilling, commerce, software tools, competitive exams, and more.",
+  "headings": {
+    "h1": [
+      "Python Tutorial - Learn Python Programming Language"
+    ],
+    "h2": [
+      "Python Fundamentals",
+      "Python Data Structures",
+      "Advanced Python",
+      "Data Science with Python",
+      "Web Development with Python",
+      "Python Practice",
+      "Why to Learn Python?",
+      "First Python Program",
+      "1. Python Basics",
+      "2. Python Functions",
+      "3. Python Data Structures",
+      "4. Python OOP Concepts",
+      "5. Python Exception Handling",
+      "6. File Handling",
+      "7. Python Database Handling",
+      "8. Python Packages or Libraries",
+      "9. Data Science with Python",
+      "10. Web Development with Python",
+      "Applications of Python",
+      "Python Practice",
+      "Important Links",
+      "Python Introduction",
+      "How Python Programs are Executed",
+      "Comments in Python",
+      "Variables in Python",
+      "List Introduction",
+      "Set in Python",
+      "Thank You!",
+      "What kind of Experience do you want to share?"
+    ],
+    "h3": [],
+    "h4": [],
+    "h5": [],
+    "h6": []
+  },
+  "paragraphs": [
+    "Notifications",
+    "Python is one of the most popular programming languages. It’s simple to use, packed with features and supported by a wide range of libraries and frameworks. Its clean syntax makes it beginner-friendly. It's",
+    "Do you wish to learn Python in a scheduled manner ?   Try our ongoing free course Python Skillup with weekly topic coverage, notes, daily quizzes and coding problems.",
+    "Here is a simple Python code, printing a string. We recommend you to edit the code and try to print your own name.",
+    "In this section, we’ll cover the basics of Python programming, including installing Python, writing first program, understanding comments and working with variables, keywords and operators.",
+    "Before starting to learn python we need to install python on our system.",
+    "In this section of Python 3 tutorial we'll explore Python function syntax, parameter handling, return values and variable scope. Along the way, we'll also introduce versatile functions like range(), map, filter and lambda functions.",
+    "Python offers versatile collections of data types, including lists, string, tuples, sets, dictionaries and arrays. In this section, we will learn about each data types in detail.",
+    "Python's collections module offers essential data structures, including the following:",
+    "To learn data structure and algorithm with python in detail, you can refer to our DSA with Python Tutorial.",
+    "In this section, we'll explore the core principles of object-oriented programming (OOP) in Python. From encapsulation to inheritance, polymorphism, abstract classes and iterators, we'll cover the essential concepts that helps you to build modular, reusable and scalable code.",
+    "In this section, we'll explore Python Exception Handling that how Python deals with unexpected errors, enabling us to write fault-tolerant code. We'll cover file handling, including reading from and writing to files.",
+    "In this section, we will cover file handling, including reading from and writing to files.",
+    "In this section we will learn how to access and work with MySQL and MongoDB databases",
+    "Python is a huge collection of Python Packages standard libraries that make development easier. These libraries help with a wide range of tasks and can save you a lot of time by providing ready-to-use tools.",
+    "Some commonly used types of libraries in Python include:",
+    "1. Foundational Libraries: These are the libraries that form the base for all data science work. Start here to build a strong foundation.",
+    "2. Advanced Visualization and Statistical Tools: Once you’re comfortable with basic data handling and visualization, move to creating cleaner visuals and performing statistical analysis.",
+    "3. Machine Learning Libraries: After data manipulation and visualization, learn machine learning, starting with simpler models and moving to advanced ones.",
+    "4. Deep Learning Frameworks: If you’re interested in AI and deep learning, these libraries will allow you to build and train neural networks.",
+    "To learn more, you can refer to Python for Data Science.",
+    "1. Core Web Frameworks (Backend Development with Python): These are the tools for building Python-based web applications.",
+    "2. Database Integration: Learn how to connect Python web frameworks to databases for storing and retrieving data.",
+    "3. Front-End and Backend Integration: Learn how to connect Python backends with front-end technologies to create dynamic, full-stack web applications.",
+    "4. API Development: Learn to build APIs (Application Programming Interfaces) for connecting your backend with front-end apps or other services.",
+    "To learn more, you can refer to Python for Web Development.",
+    "Python quiz page covers topics including variables, data types, input, output, lists, tuples, dictionaries and sets. The Python Coding Practice Problems page offers exercises on loops, functions, lists, strings, dictionaries, sets and advanced structures like heaps and deques.",
+    "This Python tutorial is updated based on latest Python 3.13.1 version.",
+    "K"
+  ],
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "absolute_url": "https://www.geeksforgeeks.org/python-programming-language/#main"
+    },
+    {
+      "text": "",
+      "href": "https://www.geeksforgeeks.org/",
+      "absolute_url": "https://www.geeksforgeeks.org/"
+    },
+    {
+      "text": "DSA to Development",
+      "href": "https://www.geeksforgeeks.org/courses/dsa-to-development-coding-guide/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/dsa-to-development-coding-guide/"
+    },
+    {
+      "text": "GATE 2026 Prep",
+      "href": "https://www.geeksforgeeks.org/courses/category/gate/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/gate/"
+    },
+    {
+      "text": "Get 3 IBM Certifications",
+      "href": "https://www.geeksforgeeks.org/courses/category/ibm-certification/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/ibm-certification/"
+    },
+    {
+      "text": "Interview 101: DSA & System Design",
+      "href": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design"
+    },
+    {
+      "text": "JAVA Backend Development (Live)",
+      "href": "https://www.geeksforgeeks.org/courses/Java-backend-live/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/Java-backend-live/"
+    },
+    {
+      "text": "Data Analytics Training",
+      "href": "https://www.geeksforgeeks.org/courses/data-analytics-training-program-excel-sql-python-powerbi",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/data-analytics-training-program-excel-sql-python-powerbi"
+    },
+    {
+      "text": "DevOps Engineering (LIVE)",
+      "href": "https://www.geeksforgeeks.org/courses/devops-live/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/devops-live/"
+    },
+    {
+      "text": "DSA in Python",
+      "href": "https://www.geeksforgeeks.org/courses/Data-Structures-With-Python/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/Data-Structures-With-Python/"
+    },
+    {
+      "text": "Placement Preparation with DSA",
+      "href": "https://www.geeksforgeeks.org/courses/placement-prep-programming-data-structures-algorithm",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/placement-prep-programming-data-structures-algorithm"
+    },
+    {
+      "text": "Data Science (Live)",
+      "href": "https://www.geeksforgeeks.org/courses/data-science-live/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/data-science-live/"
+    },
+    {
+      "text": "DSA Self Paced (C++/JAVA)",
+      "href": "https://www.geeksforgeeks.org/courses/dsa-self-paced/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/dsa-self-paced/"
+    },
+    {
+      "text": "Master Competitive Programming",
+      "href": "https://www.geeksforgeeks.org/courses/competitive-programming-cp/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/competitive-programming-cp/"
+    },
+    {
+      "text": "Full Stack Development with React & Node JS (Live)",
+      "href": "https://www.geeksforgeeks.org/courses/full-stack-node/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/full-stack-node/"
+    },
+    {
+      "text": "Full Stack Development",
+      "href": "https://www.geeksforgeeks.org/courses/full-stack-node/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/full-stack-node/"
+    },
+    {
+      "text": "Data Science & ML Program",
+      "href": "https://www.geeksforgeeks.org/courses/data-science-live/",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/data-science-live/"
+    },
+    {
+      "text": "All Courses",
+      "href": "https://www.geeksforgeeks.org/courses",
+      "absolute_url": "https://www.geeksforgeeks.org/courses"
+    },
+    {
+      "text": "Python",
+      "href": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/"
+    },
+    {
+      "text": "Java",
+      "href": "https://www.geeksforgeeks.org/java/java/",
+      "absolute_url": "https://www.geeksforgeeks.org/java/java/"
+    },
+    {
+      "text": "DSA",
+      "href": "https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/"
+    },
+    {
+      "text": "ML & Data Science",
+      "href": "https://www.geeksforgeeks.org/ai-ml-and-data-science-tutorial-learn-ai-ml-and-data-science/",
+      "absolute_url": "https://www.geeksforgeeks.org/ai-ml-and-data-science-tutorial-learn-ai-ml-and-data-science/"
+    },
+    {
+      "text": "Interview Corner",
+      "href": "https://www.geeksforgeeks.org/interview-corner/",
+      "absolute_url": "https://www.geeksforgeeks.org/interview-corner/"
+    },
+    {
+      "text": "Programming Languages",
+      "href": "https://www.geeksforgeeks.org/programming-language-tutorials/",
+      "absolute_url": "https://www.geeksforgeeks.org/programming-language-tutorials/"
+    },
+    {
+      "text": "Web Development",
+      "href": "https://www.geeksforgeeks.org/web-technology/",
+      "absolute_url": "https://www.geeksforgeeks.org/web-technology/"
+    },
+    {
+      "text": "GATE",
+      "href": "https://www.geeksforgeeks.org/gate-exam-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/gate-exam-tutorial/"
+    },
+    {
+      "text": "CS Subjects",
+      "href": "https://www.geeksforgeeks.org/articles-on-computer-science-subjects-gq/",
+      "absolute_url": "https://www.geeksforgeeks.org/articles-on-computer-science-subjects-gq/"
+    },
+    {
+      "text": "DevOps",
+      "href": "https://www.geeksforgeeks.org/devops/devops-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/devops/devops-tutorial/"
+    },
+    {
+      "text": "School Learning",
+      "href": "https://www.geeksforgeeks.org/geeksforgeeks-school/",
+      "absolute_url": "https://www.geeksforgeeks.org/geeksforgeeks-school/"
+    },
+    {
+      "text": "Software and Tools",
+      "href": "https://www.geeksforgeeks.org/websites-apps/software-and-tools-a-to-z-list/",
+      "absolute_url": "https://www.geeksforgeeks.org/websites-apps/software-and-tools-a-to-z-list/"
+    },
+    {
+      "text": "Practice Coding Problems",
+      "href": "https://www.geeksforgeeks.org/geeksforgeeks-practice-best-online-coding-platform/",
+      "absolute_url": "https://www.geeksforgeeks.org/geeksforgeeks-practice-best-online-coding-platform/"
+    },
+    {
+      "text": "Nation Skillup- Free Courses",
+      "href": "https://www.geeksforgeeks.org/nation-skill-up/",
+      "absolute_url": "https://www.geeksforgeeks.org/nation-skill-up/"
+    },
+    {
+      "text": "Problem of the Day",
+      "href": "https://www.geeksforgeeks.org/problem-of-the-day",
+      "absolute_url": "https://www.geeksforgeeks.org/problem-of-the-day"
+    },
+    {
+      "text": "Become a Mentor",
+      "href": "https://connect.geeksforgeeks.org/",
+      "absolute_url": "https://connect.geeksforgeeks.org/"
+    },
+    {
+      "text": "Apply Now!",
+      "href": "https://www.geeksforgeeks.org/jobs",
+      "absolute_url": "https://www.geeksforgeeks.org/jobs"
+    },
+    {
+      "text": "Post Jobs",
+      "href": "https://www.geeksforgeeks.org/gfg-hiring-solutions-for-recruiters/",
+      "absolute_url": "https://www.geeksforgeeks.org/gfg-hiring-solutions-for-recruiters/"
+    },
+    {
+      "text": "Job-A-Thon: Hiring Challenge",
+      "href": "https://practice.geeksforgeeks.org/events/rec/job-a-thon",
+      "absolute_url": "https://practice.geeksforgeeks.org/events/rec/job-a-thon"
+    },
+    {
+      "text": "Python Course",
+      "href": "https://www.geeksforgeeks.org/courses/master-python-complete-beginner-to-advanced",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/master-python-complete-beginner-to-advanced"
+    },
+    {
+      "text": "Python Tutorial",
+      "href": "https://www.geeksforgeeks.org/python-programming-language-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-programming-language-tutorial/"
+    },
+    {
+      "text": "Interview Questions",
+      "href": "https://www.geeksforgeeks.org/python-interview-questions/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-interview-questions/"
+    },
+    {
+      "text": "Python Quiz",
+      "href": "https://www.geeksforgeeks.org/python-quizzes/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-quizzes/"
+    },
+    {
+      "text": "Python Glossary",
+      "href": "https://www.geeksforgeeks.org/python-glossary/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-glossary/"
+    },
+    {
+      "text": "Python Projects",
+      "href": "https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/"
+    },
+    {
+      "text": "Practice Python",
+      "href": "https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/"
+    },
+    {
+      "text": "Data Science With Python",
+      "href": "https://www.geeksforgeeks.org/data-science-with-python-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/data-science-with-python-tutorial/"
+    },
+    {
+      "text": "Python Web Dev",
+      "href": "https://www.geeksforgeeks.org/python-web-development-django/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-web-development-django/"
+    },
+    {
+      "text": "DSA with Python",
+      "href": "https://www.geeksforgeeks.org/python-data-structures-and-algorithms/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-data-structures-and-algorithms/"
+    },
+    {
+      "text": "Python OOPs",
+      "href": "https://www.geeksforgeeks.org/python-oops-concepts/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-oops-concepts/"
+    },
+    {
+      "text": "Open In App",
+      "href": "https://geeksforgeeksapp.page.link/?link=https://www.geeksforgeeks.org/python-programming-language-tutorial/?type%3Darticle%26id%3D1179442&apn=free.programming.programming&isi=1641848816&ibi=org.geeksforgeeks.GeeksforGeeksDev&efr=1",
+      "absolute_url": "https://geeksforgeeksapp.page.link/?link=https://www.geeksforgeeks.org/python-programming-language-tutorial/?type%3Darticle%26id%3D1179442&apn=free.programming.programming&isi=1641848816&ibi=org.geeksforgeeks.GeeksforGeeksDev&efr=1"
+    },
+    {
+      "text": "Explore GfG Courses",
+      "href": "https://www.geeksforgeeks.org/courses",
+      "absolute_url": "https://www.geeksforgeeks.org/courses"
+    },
+    {
+      "text": "Share Your Experiences",
+      "href": "https://write.geeksforgeeks.org/#experiences",
+      "absolute_url": "https://write.geeksforgeeks.org/#experiences"
+    },
+    {
+      "text": "Python Tutorial - Learn Python Programming Language",
+      "href": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/"
+    },
+    {
+      "text": "Python Introduction",
+      "href": "https://www.geeksforgeeks.org/python/introduction-to-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/introduction-to-python/"
+    },
+    {
+      "text": "Input and Output in Python",
+      "href": "https://www.geeksforgeeks.org/python/input-and-output-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/input-and-output-in-python/"
+    },
+    {
+      "text": "Python Variables",
+      "href": "https://www.geeksforgeeks.org/python/python-variables/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-variables/"
+    },
+    {
+      "text": "Python Operators",
+      "href": "https://www.geeksforgeeks.org/python/python-operators/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-operators/"
+    },
+    {
+      "text": "Python Keywords",
+      "href": "https://www.geeksforgeeks.org/python/python-keywords/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-keywords/"
+    },
+    {
+      "text": "Python Data Types",
+      "href": "https://www.geeksforgeeks.org/python/python-data-types/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-data-types/"
+    },
+    {
+      "text": "Conditional Statements in Python",
+      "href": "https://www.geeksforgeeks.org/python/conditional-statements-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/conditional-statements-in-python/"
+    },
+    {
+      "text": "Loops in Python - For, While and Nested Loops",
+      "href": "https://www.geeksforgeeks.org/python/loops-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/loops-in-python/"
+    },
+    {
+      "text": "Python Functions",
+      "href": "https://www.geeksforgeeks.org/python/python-functions/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-functions/"
+    },
+    {
+      "text": "Recursion in Python",
+      "href": "https://www.geeksforgeeks.org/python/recursion-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/recursion-in-python/"
+    },
+    {
+      "text": "Python Lambda Functions",
+      "href": "https://www.geeksforgeeks.org/python/python-lambda-anonymous-functions-filter-map-reduce/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-lambda-anonymous-functions-filter-map-reduce/"
+    },
+    {
+      "text": "Python String",
+      "href": "https://www.geeksforgeeks.org/python/python-string/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-string/"
+    },
+    {
+      "text": "Python Lists",
+      "href": "https://www.geeksforgeeks.org/python/python-lists/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-lists/"
+    },
+    {
+      "text": "Python Tuples",
+      "href": "https://www.geeksforgeeks.org/python/python-tuples/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-tuples/"
+    },
+    {
+      "text": "Dictionaries in Python",
+      "href": "https://www.geeksforgeeks.org/python/python-dictionary/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-dictionary/"
+    },
+    {
+      "text": "Python Sets",
+      "href": "https://www.geeksforgeeks.org/python/python-sets/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-sets/"
+    },
+    {
+      "text": "Python Arrays",
+      "href": "https://www.geeksforgeeks.org/python/python-arrays/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-arrays/"
+    },
+    {
+      "text": "List Comprehension in Python",
+      "href": "https://www.geeksforgeeks.org/python/python-list-comprehension/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-list-comprehension/"
+    },
+    {
+      "text": "Python OOPs Concepts",
+      "href": "https://www.geeksforgeeks.org/python/python-oops-concepts/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-oops-concepts/"
+    },
+    {
+      "text": "Python Exception Handling",
+      "href": "https://www.geeksforgeeks.org/python/python-exception-handling/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-exception-handling/"
+    },
+    {
+      "text": "File Handling in Python",
+      "href": "https://www.geeksforgeeks.org/python/file-handling-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/file-handling-python/"
+    },
+    {
+      "text": "Python Database Tutorial",
+      "href": "https://www.geeksforgeeks.org/python/python-database-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-database-tutorial/"
+    },
+    {
+      "text": "Python MongoDB Tutorial",
+      "href": "https://www.geeksforgeeks.org/python/python-mongodb-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-mongodb-tutorial/"
+    },
+    {
+      "text": "Python MySQL",
+      "href": "https://www.geeksforgeeks.org/python/python-mysql/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-mysql/"
+    },
+    {
+      "text": "Python Packages",
+      "href": "https://www.geeksforgeeks.org/python/python-packages/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-packages/"
+    },
+    {
+      "text": "Python Modules",
+      "href": "https://www.geeksforgeeks.org/python/python-modules/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-modules/"
+    },
+    {
+      "text": "Python DSA Libraries",
+      "href": "https://www.geeksforgeeks.org/python/python-dsa-libraries/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-dsa-libraries/"
+    },
+    {
+      "text": "List of Python GUI Library and Packages",
+      "href": "https://www.geeksforgeeks.org/python/python3-gui-application-overview/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python3-gui-application-overview/"
+    },
+    {
+      "text": "NumPy Tutorial - Python Library",
+      "href": "https://www.geeksforgeeks.org/python/numpy-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/numpy-tutorial/"
+    },
+    {
+      "text": "Pandas Tutorial",
+      "href": "https://www.geeksforgeeks.org/pandas/pandas-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/pandas/pandas-tutorial/"
+    },
+    {
+      "text": "Matplotlib Tutorial",
+      "href": "https://www.geeksforgeeks.org/python/matplotlib-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/matplotlib-tutorial/"
+    },
+    {
+      "text": "Python Seaborn Tutorial",
+      "href": "https://www.geeksforgeeks.org/python/python-seaborn-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-seaborn-tutorial/"
+    },
+    {
+      "text": "StatsModel Library- Tutorial",
+      "href": "https://www.geeksforgeeks.org/data-science/statsmodel-library-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/data-science/statsmodel-library-tutorial/"
+    },
+    {
+      "text": "Learning Model Building in Scikit-learn",
+      "href": "https://www.geeksforgeeks.org/machine-learning/learning-model-building-scikit-learn-python-machine-learning-library/",
+      "absolute_url": "https://www.geeksforgeeks.org/machine-learning/learning-model-building-scikit-learn-python-machine-learning-library/"
+    },
+    {
+      "text": "TensorFlow Tutorial",
+      "href": "https://www.geeksforgeeks.org/deep-learning/tensorflow/",
+      "absolute_url": "https://www.geeksforgeeks.org/deep-learning/tensorflow/"
+    },
+    {
+      "text": "PyTorch Tutorial",
+      "href": "https://www.geeksforgeeks.org/deep-learning/pytorch-learn-with-examples/",
+      "absolute_url": "https://www.geeksforgeeks.org/deep-learning/pytorch-learn-with-examples/"
+    },
+    {
+      "text": "Flask Tutorial",
+      "href": "https://www.geeksforgeeks.org/python/flask-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/flask-tutorial/"
+    },
+    {
+      "text": "Django Tutorial | Learn Django Framework",
+      "href": "https://www.geeksforgeeks.org/python/django-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/django-tutorial/"
+    },
+    {
+      "text": "Django ORM - Inserting, Updating & Deleting Data",
+      "href": "https://www.geeksforgeeks.org/python/django-orm-inserting-updating-deleting-data/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/django-orm-inserting-updating-deleting-data/"
+    },
+    {
+      "text": "Templating With Jinja2 in Flask",
+      "href": "https://www.geeksforgeeks.org/python/templating-with-jinja2-in-flask/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/templating-with-jinja2-in-flask/"
+    },
+    {
+      "text": "Django Templates",
+      "href": "https://www.geeksforgeeks.org/python/django-templates/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/django-templates/"
+    },
+    {
+      "text": "Python | Build a REST API using Flask",
+      "href": "https://www.geeksforgeeks.org/python/python-build-a-rest-api-using-flask/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-build-a-rest-api-using-flask/"
+    },
+    {
+      "text": "How to Create a basic API using Django Rest Framework ?",
+      "href": "https://www.geeksforgeeks.org/python/how-to-create-a-basic-api-using-django-rest-framework/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/how-to-create-a-basic-api-using-django-rest-framework/"
+    },
+    {
+      "text": "Python Quiz",
+      "href": "https://www.geeksforgeeks.org/python/python-quizzes/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-quizzes/"
+    },
+    {
+      "text": "Python Coding Practice Problems",
+      "href": "https://www.geeksforgeeks.org/python/python-coding-practice-problems/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-coding-practice-problems/"
+    },
+    {
+      "text": "Python Interview Questions and Answers",
+      "href": "https://www.geeksforgeeks.org/python/python-interview-questions/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-interview-questions/"
+    },
+    {
+      "text": "DSA to Development Course",
+      "href": "https://www.geeksforgeeks.org/courses/dsa-to-development-coding-guide",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/dsa-to-development-coding-guide"
+    },
+    {
+      "text": "Python Skillup",
+      "href": "https://www.geeksforgeeks.org/courses/python-skill-up",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/python-skill-up"
+    },
+    {
+      "text": "install python",
+      "href": "https://www.geeksforgeeks.org/python/download-and-install-python-3-latest-version/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/download-and-install-python-3-latest-version/"
+    },
+    {
+      "text": "Introduction",
+      "href": "https://www.geeksforgeeks.org/python/introduction-to-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/introduction-to-python/"
+    },
+    {
+      "text": "Input and Output",
+      "href": "https://www.geeksforgeeks.org/python/input-and-output-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/input-and-output-in-python/"
+    },
+    {
+      "text": "Variables",
+      "href": "https://www.geeksforgeeks.org/python-variables/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-variables/"
+    },
+    {
+      "text": "Operators",
+      "href": "https://www.geeksforgeeks.org/python/python-operators/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-operators/"
+    },
+    {
+      "text": "Basics",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-fundamentals/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-fundamentals/"
+    },
+    {
+      "text": "I/O",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-input-output/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-input-output/"
+    },
+    {
+      "text": "Keywords",
+      "href": "https://www.geeksforgeeks.org/python/python-keywords/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-keywords/"
+    },
+    {
+      "text": "Data Types",
+      "href": "https://www.geeksforgeeks.org/python/python-data-types/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-data-types/"
+    },
+    {
+      "text": "Data Types",
+      "href": "https://www.geeksforgeeks.org/quizzes/data-type-gq/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/data-type-gq/"
+    },
+    {
+      "text": "Numbers",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-numbers-1/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-numbers-1/"
+    },
+    {
+      "text": "Boolean",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-boolean-1/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-boolean-1/"
+    },
+    {
+      "text": "Conditional Statements",
+      "href": "https://www.geeksforgeeks.org/python/conditional-statements-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/conditional-statements-in-python/"
+    },
+    {
+      "text": "Python Loops",
+      "href": "https://www.geeksforgeeks.org/python/python-for-loops/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-for-loops/"
+    },
+    {
+      "text": "Control Flow",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-control-flow-conditional-logic-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-control-flow-conditional-logic-quiz/"
+    },
+    {
+      "text": "Loops",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-loops/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-loops/"
+    },
+    {
+      "text": "Python Functions",
+      "href": "https://www.geeksforgeeks.org/python/python-functions/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-functions/"
+    },
+    {
+      "text": "Pass Statement in Function",
+      "href": "https://www.geeksforgeeks.org/python/python-pass-statement/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-pass-statement/"
+    },
+    {
+      "text": "Global and Local Variables",
+      "href": "https://www.geeksforgeeks.org/python/global-local-variables-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/global-local-variables-python/"
+    },
+    {
+      "text": "Recursion in Python",
+      "href": "https://www.geeksforgeeks.org/python/recursion-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/recursion-in-python/"
+    },
+    {
+      "text": "*args and **kwargs in Function",
+      "href": "https://www.geeksforgeeks.org/python/args-kwargs-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/args-kwargs-python/"
+    },
+    {
+      "text": "‘Self’ as Default Argument",
+      "href": "https://www.geeksforgeeks.org/python/why-python-uses-self-as-default-argument/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/why-python-uses-self-as-default-argument/"
+    },
+    {
+      "text": "First Class Function",
+      "href": "https://www.geeksforgeeks.org/python/first-class-functions-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/first-class-functions-python/"
+    },
+    {
+      "text": "Lambda Function",
+      "href": "https://www.geeksforgeeks.org/python/python-lambda-anonymous-functions-filter-map-reduce/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-lambda-anonymous-functions-filter-map-reduce/"
+    },
+    {
+      "text": "Map",
+      "href": "https://www.geeksforgeeks.org/python/python-map-function/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-map-function/"
+    },
+    {
+      "text": "Reduce",
+      "href": "https://www.geeksforgeeks.org/reduce-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/reduce-in-python/"
+    },
+    {
+      "text": "Filter Function",
+      "href": "https://www.geeksforgeeks.org/filter-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/filter-in-python/"
+    },
+    {
+      "text": "Inner Function",
+      "href": "https://www.geeksforgeeks.org/python-inner-functions/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-inner-functions/"
+    },
+    {
+      "text": "Decorators",
+      "href": "https://www.geeksforgeeks.org/decorators-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/decorators-in-python/"
+    },
+    {
+      "text": "Functions",
+      "href": "https://www.geeksforgeeks.org/quizzes/functions-python-gq/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/functions-python-gq/"
+    },
+    {
+      "text": "Strings",
+      "href": "https://www.geeksforgeeks.org/python-string/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-string/"
+    },
+    {
+      "text": "List",
+      "href": "https://www.geeksforgeeks.org/python-list/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-list/"
+    },
+    {
+      "text": "List",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-list-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-list-quiz/"
+    },
+    {
+      "text": "String",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-string-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-string-quiz/"
+    },
+    {
+      "text": "Tuples",
+      "href": "https://www.geeksforgeeks.org/python-tuples/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-tuples/"
+    },
+    {
+      "text": "Dictionary",
+      "href": "https://www.geeksforgeeks.org/python-dictionary/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-dictionary/"
+    },
+    {
+      "text": "Tuples",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-tuples-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-tuples-quiz/"
+    },
+    {
+      "text": "Dictionary",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-dictionary-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-dictionary-quiz/"
+    },
+    {
+      "text": "Sets",
+      "href": "https://www.geeksforgeeks.org/python-sets/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-sets/"
+    },
+    {
+      "text": "Arrays",
+      "href": "https://www.geeksforgeeks.org/python-arrays/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-arrays/"
+    },
+    {
+      "text": "List Comprehension",
+      "href": "https://www.geeksforgeeks.org/python-list-comprehension/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-list-comprehension/"
+    },
+    {
+      "text": "Sets",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-sets-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-sets-quiz/"
+    },
+    {
+      "text": "Arrays",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-arrays-1/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-arrays-1/"
+    },
+    {
+      "text": "List Comprehension",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-list-comprehension-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-list-comprehension-quiz/"
+    },
+    {
+      "text": "Counters",
+      "href": "https://www.geeksforgeeks.org/counters-in-python-set-1/",
+      "absolute_url": "https://www.geeksforgeeks.org/counters-in-python-set-1/"
+    },
+    {
+      "text": "Heapq",
+      "href": "https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/"
+    },
+    {
+      "text": "Deque",
+      "href": "https://www.geeksforgeeks.org/deque-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/deque-in-python/"
+    },
+    {
+      "text": "OrderedDict",
+      "href": "https://www.geeksforgeeks.org/ordereddict-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/ordereddict-in-python/"
+    },
+    {
+      "text": "Defaultdict",
+      "href": "https://www.geeksforgeeks.org/defaultdict-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/defaultdict-in-python/"
+    },
+    {
+      "text": "Counters",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-collection-counters/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-collection-counters/"
+    },
+    {
+      "text": "Heapq",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-heapq/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-heapq/"
+    },
+    {
+      "text": "Deque",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-deque/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-deque/"
+    },
+    {
+      "text": "OrderedDict",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-ordereddict/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-ordereddict/"
+    },
+    {
+      "text": "DSA with Python",
+      "href": "https://www.geeksforgeeks.org/python-data-structures-and-algorithms/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-data-structures-and-algorithms/"
+    },
+    {
+      "text": "Python OOP",
+      "href": "https://www.geeksforgeeks.org/python-oops-concepts/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-oops-concepts/"
+    },
+    {
+      "text": "Classes and Objects",
+      "href": "https://www.geeksforgeeks.org/python-classes-and-objects/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-classes-and-objects/"
+    },
+    {
+      "text": "Polymorphism",
+      "href": "https://www.geeksforgeeks.org/polymorphism-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/polymorphism-in-python/"
+    },
+    {
+      "text": "Inheritance",
+      "href": "https://www.geeksforgeeks.org/inheritance-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/inheritance-in-python/"
+    },
+    {
+      "text": "Abstract",
+      "href": "https://www.geeksforgeeks.org/abstract-classes-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/abstract-classes-in-python/"
+    },
+    {
+      "text": "Encapsulation",
+      "href": "https://www.geeksforgeeks.org/encapsulation-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/encapsulation-in-python/"
+    },
+    {
+      "text": "Iterators",
+      "href": "https://www.geeksforgeeks.org/iterators-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/iterators-in-python/"
+    },
+    {
+      "text": "OOPs",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-oops-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-oops-quiz/"
+    },
+    {
+      "text": "Python Exception Handling",
+      "href": "https://www.geeksforgeeks.org/python-exception-handling/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-exception-handling/"
+    },
+    {
+      "text": "Built-in Exception",
+      "href": "https://www.geeksforgeeks.org/built-exceptions-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/built-exceptions-python/"
+    },
+    {
+      "text": "User defined Exception",
+      "href": "https://www.geeksforgeeks.org/user-defined-exceptions-python-examples/",
+      "absolute_url": "https://www.geeksforgeeks.org/user-defined-exceptions-python-examples/"
+    },
+    {
+      "text": "Exception Handling",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-exception-handling-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-exception-handling-quiz/"
+    },
+    {
+      "text": "File Handling",
+      "href": "https://www.geeksforgeeks.org/file-handling-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/file-handling-python/"
+    },
+    {
+      "text": "Read Files",
+      "href": "https://www.geeksforgeeks.org/how-to-read-from-a-file-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/how-to-read-from-a-file-in-python/"
+    },
+    {
+      "text": "Write/Create Files",
+      "href": "https://www.geeksforgeeks.org/writing-to-file-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/writing-to-file-in-python/"
+    },
+    {
+      "text": "OS Module",
+      "href": "https://www.geeksforgeeks.org/os-module-python-examples/",
+      "absolute_url": "https://www.geeksforgeeks.org/os-module-python-examples/"
+    },
+    {
+      "text": "pathlib Module",
+      "href": "https://www.geeksforgeeks.org/pathlib-module-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/pathlib-module-in-python/"
+    },
+    {
+      "text": "Directory Management",
+      "href": "https://www.geeksforgeeks.org/python-directory-management/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-directory-management/"
+    },
+    {
+      "text": "File Handling",
+      "href": "https://www.geeksforgeeks.org/quizzes/python-file-handling-quiz/",
+      "absolute_url": "https://www.geeksforgeeks.org/quizzes/python-file-handling-quiz/"
+    },
+    {
+      "text": "Python MongoDB Tutorial",
+      "href": "https://www.geeksforgeeks.org/python-mongodb-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-mongodb-tutorial/"
+    },
+    {
+      "text": "Python MySQL Tutorial",
+      "href": "https://www.geeksforgeeks.org/python-mysql/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-mysql/"
+    },
+    {
+      "text": "Python Packages",
+      "href": "https://www.geeksforgeeks.org/python-packages/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-packages/"
+    },
+    {
+      "text": "Built-in Modules in Python",
+      "href": "https://www.geeksforgeeks.org/python-modules/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-modules/"
+    },
+    {
+      "text": "Python DSA Libraries",
+      "href": "https://www.geeksforgeeks.org/python-dsa-libraries/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-dsa-libraries/"
+    },
+    {
+      "text": "Python GUI Libraries",
+      "href": "https://www.geeksforgeeks.org/python3-gui-application-overview/",
+      "absolute_url": "https://www.geeksforgeeks.org/python3-gui-application-overview/"
+    },
+    {
+      "text": "NumPy",
+      "href": "https://www.geeksforgeeks.org/numpy-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/numpy-tutorial/"
+    },
+    {
+      "text": "Pandas",
+      "href": "https://www.geeksforgeeks.org/pandas-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/pandas-tutorial/"
+    },
+    {
+      "text": "Matplotlib",
+      "href": "https://www.geeksforgeeks.org/matplotlib-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/matplotlib-tutorial/"
+    },
+    {
+      "text": "Seaborn",
+      "href": "https://www.geeksforgeeks.org/introduction-to-seaborn-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/introduction-to-seaborn-python/"
+    },
+    {
+      "text": "Statsmodel",
+      "href": "https://www.geeksforgeeks.org/statsmodel-library-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/statsmodel-library-tutorial/"
+    },
+    {
+      "text": "Scikit-learn",
+      "href": "https://www.geeksforgeeks.org/learning-model-building-scikit-learn-python-machine-learning-library/",
+      "absolute_url": "https://www.geeksforgeeks.org/learning-model-building-scikit-learn-python-machine-learning-library/"
+    },
+    {
+      "text": "XGBoost",
+      "href": "https://www.geeksforgeeks.org/xgboost/",
+      "absolute_url": "https://www.geeksforgeeks.org/xgboost/"
+    },
+    {
+      "text": "LightGBM",
+      "href": "https://www.geeksforgeeks.org/lightgbm-light-gradient-boosting-machine/",
+      "absolute_url": "https://www.geeksforgeeks.org/lightgbm-light-gradient-boosting-machine/"
+    },
+    {
+      "text": "TensorFlow",
+      "href": "https://www.geeksforgeeks.org/tensorflow/",
+      "absolute_url": "https://www.geeksforgeeks.org/tensorflow/"
+    },
+    {
+      "text": "Keras",
+      "href": "https://www.geeksforgeeks.org/what-is-keras/",
+      "absolute_url": "https://www.geeksforgeeks.org/what-is-keras/"
+    },
+    {
+      "text": "PyTorch",
+      "href": "https://www.geeksforgeeks.org/pytorch-learn-with-examples/",
+      "absolute_url": "https://www.geeksforgeeks.org/pytorch-learn-with-examples/"
+    },
+    {
+      "text": "Python for Data Science",
+      "href": "https://www.geeksforgeeks.org/data-science-with-python-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/data-science-with-python-tutorial/"
+    },
+    {
+      "text": "Flask",
+      "href": "https://www.geeksforgeeks.org/flask-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/flask-tutorial/"
+    },
+    {
+      "text": "Django",
+      "href": "https://www.geeksforgeeks.org/django-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/django-tutorial/"
+    },
+    {
+      "text": "SQLite",
+      "href": "https://www.geeksforgeeks.org/sqlite-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/sqlite-tutorial/"
+    },
+    {
+      "text": "SQLAlchemy",
+      "href": "https://www.geeksforgeeks.org/sqlalchemy-introduction/",
+      "absolute_url": "https://www.geeksforgeeks.org/sqlalchemy-introduction/"
+    },
+    {
+      "text": "Django ORM",
+      "href": "https://www.geeksforgeeks.org/django-orm-inserting-updating-deleting-data/",
+      "absolute_url": "https://www.geeksforgeeks.org/django-orm-inserting-updating-deleting-data/"
+    },
+    {
+      "text": "Jinja2 (Flask)",
+      "href": "https://www.geeksforgeeks.org/templating-with-jinja2-in-flask/",
+      "absolute_url": "https://www.geeksforgeeks.org/templating-with-jinja2-in-flask/"
+    },
+    {
+      "text": "Django Templates",
+      "href": "https://www.geeksforgeeks.org/django-templates/",
+      "absolute_url": "https://www.geeksforgeeks.org/django-templates/"
+    },
+    {
+      "text": "Flask-RESTful",
+      "href": "https://www.geeksforgeeks.org/python-build-a-rest-api-using-flask/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-build-a-rest-api-using-flask/"
+    },
+    {
+      "text": "Django REST Framework (DRF)",
+      "href": "https://www.geeksforgeeks.org/how-to-create-a-basic-api-using-django-rest-framework/",
+      "absolute_url": "https://www.geeksforgeeks.org/how-to-create-a-basic-api-using-django-rest-framework/"
+    },
+    {
+      "text": "Python for Web Development",
+      "href": "https://www.geeksforgeeks.org/python-web-development/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-web-development/"
+    },
+    {
+      "text": "Web Development",
+      "href": "https://www.geeksforgeeks.org/python-web-development-django/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-web-development-django/"
+    },
+    {
+      "text": "Data Science",
+      "href": "https://www.geeksforgeeks.org/data-science-with-python-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/data-science-with-python-tutorial/"
+    },
+    {
+      "text": "Analysis",
+      "href": "https://www.geeksforgeeks.org/data-analysis/data-analysis-with-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/data-analysis/data-analysis-with-python/"
+    },
+    {
+      "text": "Machine Learning",
+      "href": "https://www.geeksforgeeks.org/machine-learning/",
+      "absolute_url": "https://www.geeksforgeeks.org/machine-learning/"
+    },
+    {
+      "text": "AI",
+      "href": "https://www.geeksforgeeks.org/What-is-ai-artificial-intelligence/",
+      "absolute_url": "https://www.geeksforgeeks.org/What-is-ai-artificial-intelligence/"
+    },
+    {
+      "text": "Scripting & Automation",
+      "href": "https://www.geeksforgeeks.org/python-automation/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-automation/"
+    },
+    {
+      "text": "Web Scraping",
+      "href": "https://www.geeksforgeeks.org/python-web-scraping-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-web-scraping-tutorial/"
+    },
+    {
+      "text": "Desktop App Development",
+      "href": "https://www.geeksforgeeks.org/create-first-gui-application-using-python-tkinter/",
+      "absolute_url": "https://www.geeksforgeeks.org/create-first-gui-application-using-python-tkinter/"
+    },
+    {
+      "text": "Quizzes",
+      "href": "https://www.geeksforgeeks.org/python-quizzes/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-quizzes/"
+    },
+    {
+      "text": "Python Coding Problems",
+      "href": "https://www.geeksforgeeks.org/python-coding-practice-problems/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-coding-practice-problems/"
+    },
+    {
+      "text": "Comparison of Popular Programming Languages",
+      "href": "https://www.geeksforgeeks.org/java/c-vs-java-vs-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/java/c-vs-java-vs-python/"
+    },
+    {
+      "text": "Careers & Jobs in Python",
+      "href": "https://www.geeksforgeeks.org/python/careers-jobs-in-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/careers-jobs-in-python/"
+    },
+    {
+      "text": "Companies That Use Python",
+      "href": "https://www.geeksforgeeks.org/python/companies-that-use-python/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/companies-that-use-python/"
+    },
+    {
+      "text": "Python Latest Features",
+      "href": "https://www.geeksforgeeks.org/python/python-3-13-new-features/",
+      "absolute_url": "https://www.geeksforgeeks.org/python/python-3-13-new-features/"
+    },
+    {
+      "text": "Visit Course",
+      "href": "https://www.geeksforgeeks.org/courses/master-python-complete-beginner-to-advanced",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/master-python-complete-beginner-to-advanced"
+    },
+    {
+      "text": "Campus Training Program",
+      "href": "https://www.geeksforgeeks.org/campus-training-program/",
+      "absolute_url": "https://www.geeksforgeeks.org/campus-training-program/"
+    },
+    {
+      "text": "Next Article",
+      "href": "https://www.geeksforgeeks.org/python/introduction-to-python",
+      "absolute_url": "https://www.geeksforgeeks.org/python/introduction-to-python"
+    },
+    {
+      "text": "Python Introduction",
+      "href": "https://www.geeksforgeeks.org/python/introduction-to-python",
+      "absolute_url": "https://www.geeksforgeeks.org/python/introduction-to-python"
+    },
+    {
+      "text": "K",
+      "href": "https://www.geeksforgeeks.org/user/kartik/",
+      "absolute_url": "https://www.geeksforgeeks.org/user/kartik/"
+    },
+    {
+      "text": "kartik",
+      "href": "https://www.geeksforgeeks.org/user/kartik/",
+      "absolute_url": "https://www.geeksforgeeks.org/user/kartik/"
+    },
+    {
+      "text": "Python",
+      "href": "https://www.geeksforgeeks.org/category/programming-language/python/",
+      "absolute_url": "https://www.geeksforgeeks.org/category/programming-language/python/"
+    },
+    {
+      "text": "Python Programs",
+      "href": "https://www.geeksforgeeks.org/category/programming-language/python/python-programs/",
+      "absolute_url": "https://www.geeksforgeeks.org/category/programming-language/python/python-programs/"
+    },
+    {
+      "text": "python",
+      "href": "https://www.geeksforgeeks.org/tag/python/",
+      "absolute_url": "https://www.geeksforgeeks.org/tag/python/"
+    },
+    {
+      "text": "Tutorials",
+      "href": "https://www.geeksforgeeks.org/tag/tutorials/",
+      "absolute_url": "https://www.geeksforgeeks.org/tag/tutorials/"
+    },
+    {
+      "text": "python",
+      "href": "https://www.geeksforgeeks.org/explore?category=python",
+      "absolute_url": "https://www.geeksforgeeks.org/explore?category=python"
+    },
+    {
+      "text": "python",
+      "href": "https://www.geeksforgeeks.org/explore?category=python",
+      "absolute_url": "https://www.geeksforgeeks.org/explore?category=python"
+    },
+    {
+      "text": "4k+ interested Geeks \n\n\n\nGATE CSE 2027 [Semester & Placement Preparation] \n\n\n\n\nExplore",
+      "href": "https://www.geeksforgeeks.org/courses/gate-cse-2027-semester-placement",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gate-cse-2027-semester-placement"
+    },
+    {
+      "text": "32k+ interested Geeks \n\n\n\nGATE CSE 2026 Online Course [Live Weekday Classes ] \n\n\n\n\nExplore",
+      "href": "https://www.geeksforgeeks.org/courses/gate-2026-csit",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gate-2026-csit"
+    },
+    {
+      "text": "2k+ interested Geeks \n\n\n\nGATE CSE 2028 Online Course [Live Classes] \n\n\n\n\nExplore",
+      "href": "https://www.geeksforgeeks.org/courses/gate-2028-csit",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gate-2028-csit"
+    },
+    {
+      "text": "",
+      "href": "https://www.geeksforgeeks.org/",
+      "absolute_url": "https://www.geeksforgeeks.org/"
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/geeksforgeeks.org/",
+      "absolute_url": "https://www.facebook.com/geeksforgeeks.org/"
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/geeks_for_geeks/",
+      "absolute_url": "https://www.instagram.com/geeks_for_geeks/"
+    },
+    {
+      "text": "",
+      "href": "https://in.linkedin.com/company/geeksforgeeks",
+      "absolute_url": "https://in.linkedin.com/company/geeksforgeeks"
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/geeksforgeeks",
+      "absolute_url": "https://twitter.com/geeksforgeeks"
+    },
+    {
+      "text": "",
+      "href": "https://www.youtube.com/geeksforgeeksvideos",
+      "absolute_url": "https://www.youtube.com/geeksforgeeksvideos"
+    },
+    {
+      "text": "",
+      "href": "https://geeksforgeeksapp.page.link/gfg-app",
+      "absolute_url": "https://geeksforgeeksapp.page.link/gfg-app"
+    },
+    {
+      "text": "",
+      "href": "https://geeksforgeeksapp.page.link/gfg-app",
+      "absolute_url": "https://geeksforgeeksapp.page.link/gfg-app"
+    },
+    {
+      "text": "Advertise with us",
+      "href": "https://www.geeksforgeeks.org/advertise-with-us/",
+      "absolute_url": "https://www.geeksforgeeks.org/advertise-with-us/"
+    },
+    {
+      "text": "About Us",
+      "href": "https://www.geeksforgeeks.org/about/",
+      "absolute_url": "https://www.geeksforgeeks.org/about/"
+    },
+    {
+      "text": "Legal",
+      "href": "https://www.geeksforgeeks.org/legal/",
+      "absolute_url": "https://www.geeksforgeeks.org/legal/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.geeksforgeeks.org/legal/privacy-policy/",
+      "absolute_url": "https://www.geeksforgeeks.org/legal/privacy-policy/"
+    },
+    {
+      "text": "Careers",
+      "href": "https://geeksforgeeks.zohorecruit.in/careers",
+      "absolute_url": "https://geeksforgeeks.zohorecruit.in/careers"
+    },
+    {
+      "text": "In Media",
+      "href": "https://www.geeksforgeeks.org/press-release/",
+      "absolute_url": "https://www.geeksforgeeks.org/press-release/"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://www.geeksforgeeks.org/about/contact-us/",
+      "absolute_url": "https://www.geeksforgeeks.org/about/contact-us/"
+    },
+    {
+      "text": "Corporate Solution",
+      "href": "https://www.geeksforgeeks.org/gfg-corporate-solution/",
+      "absolute_url": "https://www.geeksforgeeks.org/gfg-corporate-solution/"
+    },
+    {
+      "text": "Campus Training Program",
+      "href": "https://www.geeksforgeeks.org/campus-training-program/",
+      "absolute_url": "https://www.geeksforgeeks.org/campus-training-program/"
+    },
+    {
+      "text": "Job-A-Thon",
+      "href": "https://practice.geeksforgeeks.org/events/rec/job-a-thon/",
+      "absolute_url": "https://practice.geeksforgeeks.org/events/rec/job-a-thon/"
+    },
+    {
+      "text": "Offline Classroom Program",
+      "href": "https://www.geeksforgeeks.org/courses/category/all?courseType=offline&courseFeeType=all",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/all?courseType=offline&courseFeeType=all"
+    },
+    {
+      "text": "DSA in JAVA/C++",
+      "href": "https://www.geeksforgeeks.org/courses/dsa-self-paced",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/dsa-self-paced"
+    },
+    {
+      "text": "Master System Design",
+      "href": "https://www.geeksforgeeks.org/courses/mastering-system-design-low-level-to-high-level-solutions",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/mastering-system-design-low-level-to-high-level-solutions"
+    },
+    {
+      "text": "Master CP",
+      "href": "https://www.geeksforgeeks.org/courses/competitive-programming-cp",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/competitive-programming-cp"
+    },
+    {
+      "text": "Videos",
+      "href": "https://www.geeksforgeeks.org/videos/",
+      "absolute_url": "https://www.geeksforgeeks.org/videos/"
+    },
+    {
+      "text": "Python",
+      "href": "https://www.geeksforgeeks.org/python-programming-language/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-programming-language/"
+    },
+    {
+      "text": "Java",
+      "href": "https://www.geeksforgeeks.org/java/",
+      "absolute_url": "https://www.geeksforgeeks.org/java/"
+    },
+    {
+      "text": "C++",
+      "href": "https://www.geeksforgeeks.org/c-plus-plus/",
+      "absolute_url": "https://www.geeksforgeeks.org/c-plus-plus/"
+    },
+    {
+      "text": "PHP",
+      "href": "https://www.geeksforgeeks.org/php-tutorials/",
+      "absolute_url": "https://www.geeksforgeeks.org/php-tutorials/"
+    },
+    {
+      "text": "GoLang",
+      "href": "https://www.geeksforgeeks.org/golang/",
+      "absolute_url": "https://www.geeksforgeeks.org/golang/"
+    },
+    {
+      "text": "SQL",
+      "href": "https://www.geeksforgeeks.org/sql-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/sql-tutorial/"
+    },
+    {
+      "text": "R Language",
+      "href": "https://www.geeksforgeeks.org/r-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/r-tutorial/"
+    },
+    {
+      "text": "Android",
+      "href": "https://www.geeksforgeeks.org/android-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/android-tutorial/"
+    },
+    {
+      "text": "DSA",
+      "href": "https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/"
+    },
+    {
+      "text": "DSA Tutorial",
+      "href": "https://www.geeksforgeeks.org/dsa-tutorial-learn-data-structures-and-algorithms/",
+      "absolute_url": "https://www.geeksforgeeks.org/dsa-tutorial-learn-data-structures-and-algorithms/"
+    },
+    {
+      "text": "Problem Of The Day",
+      "href": "https://www.geeksforgeeks.org/problem-of-the-day",
+      "absolute_url": "https://www.geeksforgeeks.org/problem-of-the-day"
+    },
+    {
+      "text": "GfG 160",
+      "href": "https://www.geeksforgeeks.org/courses/gfg-160-series",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gfg-160-series"
+    },
+    {
+      "text": "DSA 360",
+      "href": "https://www.geeksforgeeks.org/courses/dsa-skill-up",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/dsa-skill-up"
+    },
+    {
+      "text": "DSA Roadmap",
+      "href": "https://www.geeksforgeeks.org/complete-roadmap-to-learn-dsa-from-scratch/",
+      "absolute_url": "https://www.geeksforgeeks.org/complete-roadmap-to-learn-dsa-from-scratch/"
+    },
+    {
+      "text": "DSA Interview Questions",
+      "href": "https://www.geeksforgeeks.org/top-100-data-structure-and-algorithms-dsa-interview-questions-topic-wise/",
+      "absolute_url": "https://www.geeksforgeeks.org/top-100-data-structure-and-algorithms-dsa-interview-questions-topic-wise/"
+    },
+    {
+      "text": "Competitive Programming",
+      "href": "https://www.geeksforgeeks.org/competitive-programming-a-complete-guide/",
+      "absolute_url": "https://www.geeksforgeeks.org/competitive-programming-a-complete-guide/"
+    },
+    {
+      "text": "Data Science & ML",
+      "href": "https://www.geeksforgeeks.org/ai-ml-ds/",
+      "absolute_url": "https://www.geeksforgeeks.org/ai-ml-ds/"
+    },
+    {
+      "text": "Data Science With Python",
+      "href": "https://www.geeksforgeeks.org/data-science-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/data-science-tutorial/"
+    },
+    {
+      "text": "Machine Learning",
+      "href": "https://www.geeksforgeeks.org/machine-learning/",
+      "absolute_url": "https://www.geeksforgeeks.org/machine-learning/"
+    },
+    {
+      "text": "ML Maths",
+      "href": "https://www.geeksforgeeks.org/machine-learning-mathematics/",
+      "absolute_url": "https://www.geeksforgeeks.org/machine-learning-mathematics/"
+    },
+    {
+      "text": "Data Visualisation",
+      "href": "https://www.geeksforgeeks.org/python-data-visualization-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-data-visualization-tutorial/"
+    },
+    {
+      "text": "Pandas",
+      "href": "https://www.geeksforgeeks.org/pandas-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/pandas-tutorial/"
+    },
+    {
+      "text": "NumPy",
+      "href": "https://www.geeksforgeeks.org/numpy-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/numpy-tutorial/"
+    },
+    {
+      "text": "NLP",
+      "href": "https://www.geeksforgeeks.org/natural-language-processing-nlp-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/natural-language-processing-nlp-tutorial/"
+    },
+    {
+      "text": "Deep Learning",
+      "href": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/deep-learning-tutorial/"
+    },
+    {
+      "text": "Web Technologies",
+      "href": "https://www.geeksforgeeks.org/web-technology/",
+      "absolute_url": "https://www.geeksforgeeks.org/web-technology/"
+    },
+    {
+      "text": "HTML",
+      "href": "https://www.geeksforgeeks.org/html/",
+      "absolute_url": "https://www.geeksforgeeks.org/html/"
+    },
+    {
+      "text": "CSS",
+      "href": "https://www.geeksforgeeks.org/css/",
+      "absolute_url": "https://www.geeksforgeeks.org/css/"
+    },
+    {
+      "text": "JavaScript",
+      "href": "https://www.geeksforgeeks.org/javascript/",
+      "absolute_url": "https://www.geeksforgeeks.org/javascript/"
+    },
+    {
+      "text": "TypeScript",
+      "href": "https://www.geeksforgeeks.org/typescript/",
+      "absolute_url": "https://www.geeksforgeeks.org/typescript/"
+    },
+    {
+      "text": "ReactJS",
+      "href": "https://www.geeksforgeeks.org/learn-reactjs/",
+      "absolute_url": "https://www.geeksforgeeks.org/learn-reactjs/"
+    },
+    {
+      "text": "NextJS",
+      "href": "https://www.geeksforgeeks.org/nextjs/",
+      "absolute_url": "https://www.geeksforgeeks.org/nextjs/"
+    },
+    {
+      "text": "NodeJs",
+      "href": "https://www.geeksforgeeks.org/nodejs/",
+      "absolute_url": "https://www.geeksforgeeks.org/nodejs/"
+    },
+    {
+      "text": "Bootstrap",
+      "href": "https://www.geeksforgeeks.org/bootstrap/",
+      "absolute_url": "https://www.geeksforgeeks.org/bootstrap/"
+    },
+    {
+      "text": "Tailwind CSS",
+      "href": "https://www.geeksforgeeks.org/tailwind-css/",
+      "absolute_url": "https://www.geeksforgeeks.org/tailwind-css/"
+    },
+    {
+      "text": "Python Tutorial",
+      "href": "https://www.geeksforgeeks.org/python-programming-language/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-programming-language/"
+    },
+    {
+      "text": "Python Examples",
+      "href": "https://www.geeksforgeeks.org/python-programming-examples/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-programming-examples/"
+    },
+    {
+      "text": "Django Tutorial",
+      "href": "https://www.geeksforgeeks.org/django-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/django-tutorial/"
+    },
+    {
+      "text": "Python Projects",
+      "href": "https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/"
+    },
+    {
+      "text": "Python Tkinter",
+      "href": "https://www.geeksforgeeks.org/python-tkinter-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-tkinter-tutorial/"
+    },
+    {
+      "text": "Web Scraping",
+      "href": "https://www.geeksforgeeks.org/python-web-scraping-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-web-scraping-tutorial/"
+    },
+    {
+      "text": "OpenCV Tutorial",
+      "href": "https://www.geeksforgeeks.org/opencv-python-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/opencv-python-tutorial/"
+    },
+    {
+      "text": "Python Interview Question",
+      "href": "https://www.geeksforgeeks.org/python-interview-questions/",
+      "absolute_url": "https://www.geeksforgeeks.org/python-interview-questions/"
+    },
+    {
+      "text": "GATE CS Notes",
+      "href": "https://www.geeksforgeeks.org/gate-cs-notes-gq/",
+      "absolute_url": "https://www.geeksforgeeks.org/gate-cs-notes-gq/"
+    },
+    {
+      "text": "Operating Systems",
+      "href": "https://www.geeksforgeeks.org/operating-systems/",
+      "absolute_url": "https://www.geeksforgeeks.org/operating-systems/"
+    },
+    {
+      "text": "Computer Network",
+      "href": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "absolute_url": "https://www.geeksforgeeks.org/computer-network-tutorials/"
+    },
+    {
+      "text": "Database Management System",
+      "href": "https://www.geeksforgeeks.org/dbms/",
+      "absolute_url": "https://www.geeksforgeeks.org/dbms/"
+    },
+    {
+      "text": "Software Engineering",
+      "href": "https://www.geeksforgeeks.org/software-engineering/",
+      "absolute_url": "https://www.geeksforgeeks.org/software-engineering/"
+    },
+    {
+      "text": "Digital Logic Design",
+      "href": "https://www.geeksforgeeks.org/digital-electronics-logic-design-tutorials/",
+      "absolute_url": "https://www.geeksforgeeks.org/digital-electronics-logic-design-tutorials/"
+    },
+    {
+      "text": "Engineering Maths",
+      "href": "https://www.geeksforgeeks.org/engineering-mathematics-tutorials/",
+      "absolute_url": "https://www.geeksforgeeks.org/engineering-mathematics-tutorials/"
+    },
+    {
+      "text": "DevOps",
+      "href": "https://www.geeksforgeeks.org/devops-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/devops-tutorial/"
+    },
+    {
+      "text": "Git",
+      "href": "https://www.geeksforgeeks.org/git-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/git-tutorial/"
+    },
+    {
+      "text": "AWS",
+      "href": "https://www.geeksforgeeks.org/aws-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/aws-tutorial/"
+    },
+    {
+      "text": "Docker",
+      "href": "https://www.geeksforgeeks.org/docker-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/docker-tutorial/"
+    },
+    {
+      "text": "Kubernetes",
+      "href": "https://www.geeksforgeeks.org/kubernetes-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/kubernetes-tutorial/"
+    },
+    {
+      "text": "Azure",
+      "href": "https://www.geeksforgeeks.org/microsoft-azure/",
+      "absolute_url": "https://www.geeksforgeeks.org/microsoft-azure/"
+    },
+    {
+      "text": "GCP",
+      "href": "https://www.geeksforgeeks.org/google-cloud-platform-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/google-cloud-platform-tutorial/"
+    },
+    {
+      "text": "DevOps Roadmap",
+      "href": "https://www.geeksforgeeks.org/devops-roadmap/",
+      "absolute_url": "https://www.geeksforgeeks.org/devops-roadmap/"
+    },
+    {
+      "text": "System Design",
+      "href": "https://www.geeksforgeeks.org/system-design-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/system-design-tutorial/"
+    },
+    {
+      "text": "High Level Design",
+      "href": "https://www.geeksforgeeks.org/what-is-high-level-design-learn-system-design/",
+      "absolute_url": "https://www.geeksforgeeks.org/what-is-high-level-design-learn-system-design/"
+    },
+    {
+      "text": "Low Level Design",
+      "href": "https://www.geeksforgeeks.org/what-is-low-level-design-or-lld-learn-system-design/",
+      "absolute_url": "https://www.geeksforgeeks.org/what-is-low-level-design-or-lld-learn-system-design/"
+    },
+    {
+      "text": "UML Diagrams",
+      "href": "https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/",
+      "absolute_url": "https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/"
+    },
+    {
+      "text": "Interview Guide",
+      "href": "https://www.geeksforgeeks.org/system-design-interview-guide/",
+      "absolute_url": "https://www.geeksforgeeks.org/system-design-interview-guide/"
+    },
+    {
+      "text": "Design Patterns",
+      "href": "https://www.geeksforgeeks.org/software-design-patterns/",
+      "absolute_url": "https://www.geeksforgeeks.org/software-design-patterns/"
+    },
+    {
+      "text": "OOAD",
+      "href": "https://www.geeksforgeeks.org/object-oriented-analysis-and-design/",
+      "absolute_url": "https://www.geeksforgeeks.org/object-oriented-analysis-and-design/"
+    },
+    {
+      "text": "System Design Bootcamp",
+      "href": "https://www.geeksforgeeks.org/system-design-interview-bootcamp-guide/",
+      "absolute_url": "https://www.geeksforgeeks.org/system-design-interview-bootcamp-guide/"
+    },
+    {
+      "text": "Interview Questions",
+      "href": "https://www.geeksforgeeks.org/most-commonly-asked-system-design-interview-problems-questions/",
+      "absolute_url": "https://www.geeksforgeeks.org/most-commonly-asked-system-design-interview-problems-questions/"
+    },
+    {
+      "text": "Mathematics",
+      "href": "https://www.geeksforgeeks.org/maths/",
+      "absolute_url": "https://www.geeksforgeeks.org/maths/"
+    },
+    {
+      "text": "Physics",
+      "href": "https://www.geeksforgeeks.org/physics/",
+      "absolute_url": "https://www.geeksforgeeks.org/physics/"
+    },
+    {
+      "text": "Chemistry",
+      "href": "https://www.geeksforgeeks.org/chemistry/",
+      "absolute_url": "https://www.geeksforgeeks.org/chemistry/"
+    },
+    {
+      "text": "Biology",
+      "href": "https://www.geeksforgeeks.org/biology/",
+      "absolute_url": "https://www.geeksforgeeks.org/biology/"
+    },
+    {
+      "text": "Social Science",
+      "href": "https://www.geeksforgeeks.org/social-science/",
+      "absolute_url": "https://www.geeksforgeeks.org/social-science/"
+    },
+    {
+      "text": "English Grammar",
+      "href": "https://www.geeksforgeeks.org/english-grammar/",
+      "absolute_url": "https://www.geeksforgeeks.org/english-grammar/"
+    },
+    {
+      "text": "Databases",
+      "href": "https://www.geeksforgeeks.org/getting-started-with-database-management-system/",
+      "absolute_url": "https://www.geeksforgeeks.org/getting-started-with-database-management-system/"
+    },
+    {
+      "text": "SQL",
+      "href": "https://www.geeksforgeeks.org/sql-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/sql-tutorial/"
+    },
+    {
+      "text": "MYSQL",
+      "href": "https://www.geeksforgeeks.org/mysql-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/mysql-tutorial/"
+    },
+    {
+      "text": "PostgreSQL",
+      "href": "https://www.geeksforgeeks.org/postgresql-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/postgresql-tutorial/"
+    },
+    {
+      "text": "PL/SQL",
+      "href": "https://www.geeksforgeeks.org/pl-sql-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/pl-sql-tutorial/"
+    },
+    {
+      "text": "MongoDB",
+      "href": "https://www.geeksforgeeks.org/mongodb-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/mongodb-tutorial/"
+    },
+    {
+      "text": "Preparation Corner",
+      "href": "https://www.geeksforgeeks.org/technical-interview-preparation/",
+      "absolute_url": "https://www.geeksforgeeks.org/technical-interview-preparation/"
+    },
+    {
+      "text": "Company-Wise Recruitment Process",
+      "href": "https://www.geeksforgeeks.org/company-wise-recruitment-process/",
+      "absolute_url": "https://www.geeksforgeeks.org/company-wise-recruitment-process/"
+    },
+    {
+      "text": "Aptitude Preparation",
+      "href": "https://www.geeksforgeeks.org/aptitude-questions-and-answers/",
+      "absolute_url": "https://www.geeksforgeeks.org/aptitude-questions-and-answers/"
+    },
+    {
+      "text": "Puzzles",
+      "href": "https://www.geeksforgeeks.org/puzzles/",
+      "absolute_url": "https://www.geeksforgeeks.org/puzzles/"
+    },
+    {
+      "text": "Company-Wise Preparation",
+      "href": "https://www.geeksforgeeks.org/company-preparation/",
+      "absolute_url": "https://www.geeksforgeeks.org/company-preparation/"
+    },
+    {
+      "text": "More Tutorials",
+      "href": "https://www.geeksforgeeks.org/geeksforgeeks-online-tutorials-free/",
+      "absolute_url": "https://www.geeksforgeeks.org/geeksforgeeks-online-tutorials-free/"
+    },
+    {
+      "text": "Software Development",
+      "href": "https://www.geeksforgeeks.org/software-development/",
+      "absolute_url": "https://www.geeksforgeeks.org/software-development/"
+    },
+    {
+      "text": "Software Testing",
+      "href": "https://www.geeksforgeeks.org/software-testing-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/software-testing-tutorial/"
+    },
+    {
+      "text": "Product Management",
+      "href": "https://www.geeksforgeeks.org/product-management/",
+      "absolute_url": "https://www.geeksforgeeks.org/product-management/"
+    },
+    {
+      "text": "Project Management",
+      "href": "https://www.geeksforgeeks.org/project-management-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/project-management-tutorial/"
+    },
+    {
+      "text": "Linux",
+      "href": "https://www.geeksforgeeks.org/linux-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/linux-tutorial/"
+    },
+    {
+      "text": "Excel",
+      "href": "https://www.geeksforgeeks.org/excel-tutorial/",
+      "absolute_url": "https://www.geeksforgeeks.org/excel-tutorial/"
+    },
+    {
+      "text": "All Cheat Sheets",
+      "href": "https://www.geeksforgeeks.org/geeksforgeeks-master-sheet-list-of-all-cheat-sheets/",
+      "absolute_url": "https://www.geeksforgeeks.org/geeksforgeeks-master-sheet-list-of-all-cheat-sheets/"
+    },
+    {
+      "text": "IBM Certification Courses",
+      "href": "https://www.geeksforgeeks.org/courses/category/ibm-certification",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/ibm-certification"
+    },
+    {
+      "text": "DSA and Placements",
+      "href": "https://www.geeksforgeeks.org/courses/category/dsa-placements",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/dsa-placements"
+    },
+    {
+      "text": "Web Development",
+      "href": "https://www.geeksforgeeks.org/courses/category/development-testing",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/development-testing"
+    },
+    {
+      "text": "Data Science",
+      "href": "https://www.geeksforgeeks.org/courses/category/machine-learning-data-science",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/machine-learning-data-science"
+    },
+    {
+      "text": "Programming Languages",
+      "href": "https://www.geeksforgeeks.org/courses/category/programming-languages",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/programming-languages"
+    },
+    {
+      "text": "DevOps & Cloud",
+      "href": "https://www.geeksforgeeks.org/courses/category/cloud-devops",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/cloud-devops"
+    },
+    {
+      "text": "C Programming with Data Structures",
+      "href": "https://www.geeksforgeeks.org/courses/c-Programming-basic-to-advanced",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/c-Programming-basic-to-advanced"
+    },
+    {
+      "text": "C++ Programming Course",
+      "href": "https://www.geeksforgeeks.org/courses/cpp-programming-basic-to-advanced",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/cpp-programming-basic-to-advanced"
+    },
+    {
+      "text": "Java Programming Course",
+      "href": "https://www.geeksforgeeks.org/courses/java-online-course-complete-beginner-to-advanced",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/java-online-course-complete-beginner-to-advanced"
+    },
+    {
+      "text": "Python Full Course",
+      "href": "https://www.geeksforgeeks.org/courses/master-python-complete-beginner-to-advanced",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/master-python-complete-beginner-to-advanced"
+    },
+    {
+      "text": "DevOps Engineering",
+      "href": "https://www.geeksforgeeks.org/courses/devops-live",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/devops-live"
+    },
+    {
+      "text": "AWS Solutions Architect Certification",
+      "href": "https://www.geeksforgeeks.org/courses/AWS-solutions-architect-certification-training-program-live",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/AWS-solutions-architect-certification-training-program-live"
+    },
+    {
+      "text": "Salesforce Certified Administrator Course",
+      "href": "https://www.geeksforgeeks.org/courses/salesforce-certified-administrator",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/salesforce-certified-administrator"
+    },
+    {
+      "text": "GATE 2026",
+      "href": "https://www.geeksforgeeks.org/courses/category/gate",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/category/gate"
+    },
+    {
+      "text": "GATE CS Rank Booster",
+      "href": "https://www.geeksforgeeks.org/courses/gate-rank-booster",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gate-rank-booster"
+    },
+    {
+      "text": "GATE DA Rank Booster",
+      "href": "https://www.geeksforgeeks.org/courses/gate-da-rank-booster",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gate-da-rank-booster"
+    },
+    {
+      "text": "GATE CS & IT Course - 2026",
+      "href": "https://www.geeksforgeeks.org/courses/gate-2026-csit",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gate-2026-csit"
+    },
+    {
+      "text": "GATE DA Course 2026",
+      "href": "https://www.geeksforgeeks.org/courses/gate-da-2026",
+      "absolute_url": "https://www.geeksforgeeks.org/courses/gate-da-2026"
+    },
+    {
+      "text": "GATE Rank Predictor",
+      "href": "https://www.geeksforgeeks.org/gate-rank-predictor",
+      "absolute_url": "https://www.geeksforgeeks.org/gate-rank-predictor"
+    },
+    {
+      "text": "@GeeksforGeeks, Sanchhaya Education Private Limited",
+      "href": "https://www.geeksforgeeks.org/",
+      "absolute_url": "https://www.geeksforgeeks.org/"
+    },
+    {
+      "text": "All rights reserved",
+      "href": "https://www.geeksforgeeks.org/copyright-information/",
+      "absolute_url": "https://www.geeksforgeeks.org/copyright-information/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.geeksforgeeks.org/cookie-policy/",
+      "absolute_url": "https://www.geeksforgeeks.org/cookie-policy/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.geeksforgeeks.org/privacy-policy/",
+      "absolute_url": "https://www.geeksforgeeks.org/privacy-policy/"
+    },
+    {
+      "text": "",
+      "href": "#",
+      "absolute_url": "https://www.geeksforgeeks.org/python-programming-language/"
+    },
+    {
+      "text": "Interview Experiences",
+      "href": "https://write.geeksforgeeks.org/posts-new?cid=e8fc46fe-75e7-4a4b-be3c-0c862d655ed0",
+      "absolute_url": "https://write.geeksforgeeks.org/posts-new?cid=e8fc46fe-75e7-4a4b-be3c-0c862d655ed0"
+    },
+    {
+      "text": "Admission Experiences",
+      "href": "https://write.geeksforgeeks.org/posts-new?cid=82536bdb-84e6-4661-87c3-e77c3ac04ede",
+      "absolute_url": "https://write.geeksforgeeks.org/posts-new?cid=82536bdb-84e6-4661-87c3-e77c3ac04ede"
+    },
+    {
+      "text": "Career Journeys",
+      "href": "https://write.geeksforgeeks.org/posts-new?cid=5219b0b2-7671-40a0-9bda-503e28a61c31",
+      "absolute_url": "https://write.geeksforgeeks.org/posts-new?cid=5219b0b2-7671-40a0-9bda-503e28a61c31"
+    },
+    {
+      "text": "Work Experiences",
+      "href": "https://write.geeksforgeeks.org/posts-new?cid=22ae3354-15b6-4dd4-a5b4-5c7a105b8a8f",
+      "absolute_url": "https://write.geeksforgeeks.org/posts-new?cid=22ae3354-15b6-4dd4-a5b4-5c7a105b8a8f"
+    },
+    {
+      "text": "Campus Experiences",
+      "href": "https://write.geeksforgeeks.org/posts-new?cid=c5e1ac90-9490-440a-a5fa-6180c87ab8ae",
+      "absolute_url": "https://write.geeksforgeeks.org/posts-new?cid=c5e1ac90-9490-440a-a5fa-6180c87ab8ae"
+    },
+    {
+      "text": "Competitive Exam Experiences",
+      "href": "https://write.geeksforgeeks.org/posts-new?cid=5ebb8fe9-b980-4891-af07-f2d62a9735f2",
+      "absolute_url": "https://write.geeksforgeeks.org/posts-new?cid=5ebb8fe9-b980-4891-af07-f2d62a9735f2"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://media.geeksforgeeks.org/gfg-gg-logo.svg",
+      "alt": "geeksforgeeks",
+      "absolute_url": "https://media.geeksforgeeks.org/gfg-gg-logo.svg"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/auth-dashboard-uploads/Vector11.svg",
+      "alt": "explore course icon",
+      "absolute_url": "https://media.geeksforgeeks.org/auth-dashboard-uploads/Vector11.svg"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/courses/PythonIntroduction/PythonIntroduction20241108170605-small.png",
+      "alt": "Video Thumbnail",
+      "absolute_url": "https://media.geeksforgeeks.org/courses/PythonIntroduction/PythonIntroduction20241108170605-small.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/courses/HowPythonProgramsareExecuted/HowPythonProgramsareExecuted20241108170233-small.png",
+      "alt": "Video Thumbnail",
+      "absolute_url": "https://media.geeksforgeeks.org/courses/HowPythonProgramsareExecuted/HowPythonProgramsareExecuted20241108170233-small.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/courses/CommentsinPython/CommentsinPython20241108170732-small.png",
+      "alt": "Video Thumbnail",
+      "absolute_url": "https://media.geeksforgeeks.org/courses/CommentsinPython/CommentsinPython20241108170732-small.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/courses/VariablesinPython/VariablesinPython20241108171348-small.png",
+      "alt": "Video Thumbnail",
+      "absolute_url": "https://media.geeksforgeeks.org/courses/VariablesinPython/VariablesinPython20241108171348-small.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/courses/ListIntroduction/ListIntroduction20241108171840-small.png",
+      "alt": "Video Thumbnail",
+      "absolute_url": "https://media.geeksforgeeks.org/courses/ListIntroduction/ListIntroduction20241108171840-small.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/courses/SetinPython/Setsinpython20241106105252-small.png",
+      "alt": "Video Thumbnail",
+      "absolute_url": "https://media.geeksforgeeks.org/courses/SetinPython/Setsinpython20241106105252-small.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/wp-content/uploads/20241230002535674344/file.webp",
+      "alt": "course-img",
+      "absolute_url": "https://media.geeksforgeeks.org/wp-content/uploads/20241230002535674344/file.webp"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/wp-content/uploads/20241228104608348548/GATE-CSE--2026-live-online-classes.webp",
+      "alt": "course-img",
+      "absolute_url": "https://media.geeksforgeeks.org/wp-content/uploads/20241228104608348548/GATE-CSE--2026-live-online-classes.webp"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/wp-content/uploads/20241228104806995039/GATE-CSE--2028-live-online-classes.webp",
+      "alt": "course-img",
+      "absolute_url": "https://media.geeksforgeeks.org/wp-content/uploads/20241228104806995039/GATE-CSE--2028-live-online-classes.webp"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/auth-dashboard-uploads/gfgFooterLogo.png",
+      "alt": "geeksforgeeks-footer-logo",
+      "absolute_url": "https://media.geeksforgeeks.org/auth-dashboard-uploads/gfgFooterLogo.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/auth-dashboard-uploads/googleplay.png",
+      "alt": "GFG App on Play Store",
+      "absolute_url": "https://media.geeksforgeeks.org/auth-dashboard-uploads/googleplay.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/auth-dashboard-uploads/appstore.png",
+      "alt": "GFG App on App Store",
+      "absolute_url": "https://media.geeksforgeeks.org/auth-dashboard-uploads/appstore.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/auth-dashboard-uploads/suggestChangeIcon.png",
+      "alt": "geeksforgeeks-suggest-icon",
+      "absolute_url": "https://media.geeksforgeeks.org/auth-dashboard-uploads/suggestChangeIcon.png"
+    },
+    {
+      "src": "https://media.geeksforgeeks.org/auth-dashboard-uploads/createImprovementIcon.png",
+      "alt": "geeksforgeeks-improvement-icon",
+      "absolute_url": "https://media.geeksforgeeks.org/auth-dashboard-uploads/createImprovementIcon.png"
+    }
+  ],
+  "meta_tags": {
+    "viewport": "width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+    "theme-color": "#308D46",
+    "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",
+    "og:image:type": "image/png",
+    "og:image:width": "200",
+    "og:image:height": "200",
+    "facebook-domain-verification": "xo7t4ve2wn3ywfkjdvwbrk01pvdond",
+    "og:title": "Python Tutorial | Learn Python Programming Language - GeeksforGeeks",
+    "description": "Your All-in-One Learning Portal: GeeksforGeeks is a comprehensive educational platform that empowers learners across domains-spanning computer science and programming, school education, upskilling, commerce, software tools, competitive exams, and more.",
+    "og:url": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/",
+    "keywords": "Python programming, web development, data science, machine learning, AI frameworks, Python libraries, object-oriented programming, exception handling, file handling, database integration, Python packages, data visualization, cross-platform compatibility, Python coding opportunities, Python for beginners",
+    "og:site_name": "GeeksforGeeks",
+    "og:image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",
+    "article:section": "Python",
+    "article:tag": "Tutorials",
+    "og:type": "article",
+    "og:locale": "en_US",
+    "article:published_time": "2024-03-01 13:15:55+00:00",
+    "article:modified_time": "2025-08-11 16:34:24+00:00",
+    "og:updated_time": "2025-08-11 16:34:24+00:00",
+    "og:image:secure_url": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",
+    "og:description": "Your All-in-One Learning Portal: GeeksforGeeks is a comprehensive educational platform that empowers learners across domains-spanning computer science and programming, school education, upskilling, commerce, software tools, competitive exams, and more.",
+    "msapplication-TileImage": "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png"
+  },
+  "word_count": 1642,
+  "scraped_at": "2025-08-11 17:57:06.145507+00:00"
+}
