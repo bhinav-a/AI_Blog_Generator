@@ -1,63 +1,62 @@
 {% extends 'scraper/base.html' %}
 
-{% block title %}Scraped Data - {{ scraped_data.title }}{% endblock %}
+{% block title %}Job // {{ scraped_data.id }}{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-12">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Scraped Data Details</h2>
-            <div>
-                <a href="{% url 'scraper:index' %}" class="btn btn-secondary">Back to Home</a>
-                {% if scraped_data.status == 'success' %}
-                    <a href="{% url 'scraper:download' scraped_data.pk %}" class="btn btn-success">Download JSON</a>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3 class="mb-0">{{ scraped_data.title|default:"No Title" }}</h3>
-            </div>
-            <div class="card-body">
-                <div class="row mb-3">
-                    <div class="col-md-3"><strong>URL:</strong></div>
-                    <div class="col-md-9">
-                        <a href="{{ scraped_data.url }}" target="_blank">{{ scraped_data.url }}</a>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-3"><strong>Status:</strong></div>
-                    <div class="col-md-9">
-                        <span class="status-{{ scraped_data.status }}">
-                            {{ scraped_data.get_status_display }}
-                        </span>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-3"><strong>Scraped At:</strong></div>
-                    <div class="col-md-9">{{ scraped_data.created_at|date:"F d, Y H:i:s" }}</div>
-                </div>
-
-                {% if scraped_data.error_message %}
-                <div class="row mb-3">
-                    <div class="col-md-3"><strong>Error:</strong></div>
-                    <div class="col-md-9 text-danger">{{ scraped_data.error_message }}</div>
-                </div>
-                {% endif %}
-
-                {% if json_content %}
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Scraped Data Preview</h4>
-                        <div class="json-content">
-                            <pre>{{ json_content|pprint }}</pre>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-            </div>
-        </div>
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+    <div>
+        <h2 class="display-6 fw-bold mb-1">> Job Report</h2>
+        <p class="text-muted-dark mb-0">Task ID [{{ scraped_data.id }}] executed {{ scraped_data.created_at }}.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'scraper:index' %}" class="btn btn-outline-light">
+            <i class="bi bi-arrow-left-circle me-1"></i>Return
+        </a>
+        {% if scraped_data.status == 'success' %}
+            <a href="{% url 'scraper:download' scraped_data.pk %}" class="btn btn-primary fw-bold">
+                <i class="bi bi-download me-1"></i>Download Payload
+            </a>
+        {% endif %}
     </div>
 </div>
+
+<hr style="border-color: var(--border-glow);">
+
+<div class="mt-4">
+    <dl class="row">
+        <dt class="col-sm-3 text-muted-dark">URL:</dt>
+        <dd class="col-sm-9"><a href="{{ scraped_data.url }}" target="_blank">{{ scraped_data.url }}</a></dd>
+
+        <dt class="col-sm-3 text-muted-dark">Title:</dt>
+        <dd class="col-sm-9">{{ scraped_data.title|default:"// no title //" }}</dd>
+
+        <dt class="col-sm-3 text-muted-dark">Status:</dt>
+        <dd class="col-sm-9">
+            <span class="status-badge status-{{ scraped_data.status|lower }}">
+                {{ scraped_data.get_status_display }}
+            </span>
+        </dd>
+
+        <dt class="col-sm-3 text-muted-dark">Timestamp:</dt>
+        <dd class="col-sm-9">{{ scraped_data.created_at|date:"Y-m-d H:i:s T" }}</dd>
+
+        {% if scraped_data.error_message %}
+            <dt class="col-sm-3 text-muted-dark" style="color: #ff4b4b;">Error:</dt>
+            <dd class="col-sm-9" style="color: #ff4b4b;">
+                {{ scraped_data.error_message }}
+            </dd>
+        {% endif %}
+    </dl>
+</div>
+
+{% if json_content %}
+    <hr class="my-5" style="border-color: var(--border-glow);">
+    
+    <div class="mt-4">
+        <h4 class="fw-bold mb-3">> JSON_Payload</h4>
+        <div class="json-content">
+            <pre>{{ json_content|pprint }}</pre>
+        </div>
+    </div>
+{% endif %}
 {% endblock %}

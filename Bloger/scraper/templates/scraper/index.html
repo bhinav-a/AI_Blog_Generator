@@ -1,79 +1,84 @@
 {% extends 'scraper/base.html' %}
+{% load static %}
 
-{% block title %}Web Scraper - Home{% endblock %}
+{% block title %}Scraper_Interface // Home{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-8 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                <h2 class="mb-0">Web Page Scraper</h2>
-            </div>
-            <div class="card-body">
-                <form method="post">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="{{ form.url.id_for_label }}" class="form-label">{{ form.url.label }}</label>
-                        {{ form.url }}
-                        {% if form.url.errors %}
-                            <div class="text-danger">
-                                {% for error in form.url.errors %}
-                                    <small>{{ error }}</small>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                    <button type="submit" class="btn btn-primary">Scrape Data</button>
-                </form>
-            </div>
-        </div>
+<div class="text-center">
+    <h2 class="display-5 fw-bold mb-3" style="color: var(--primary-glow); text-shadow: 0 0 5px var(--border-glow);">
+        > Initialize Scrape
+    </h2>
+    <p class="lead mb-5 text-muted-dark">Input Target URL Below.</p>
+</div>
 
-        {% if recent_scrapes %}
-        <div class="card mt-4">
-            <div class="card-header">
-                <h3 class="mb-0">Recent Scrapes</h3>
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <form method="post" class="d-grid gap-2">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="{{ form.url.id_for_label }}" class="form-label visually-hidden">{{ form.url.label }}</label>
+                {{ form.url }}
+                {% if form.url.errors %}
+                    <div class="text-danger mt-2">
+                        {% for error in form.url.errors %}
+                            <small>> {{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>URL</th>
-                                <th>Title</th>
-                                <th>Status</th>
-                                <th>Date</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for scrape in recent_scrapes %}
-                            <tr>
-                                <td>
-                                    <a href="{{ scrape.url }}" target="_blank" class="text-truncate d-inline-block" style="max-width: 200px;">
-                                        {{ scrape.url }}
-                                    </a>
-                                </td>
-                                <td>{{ scrape.title|truncatechars:50 }}</td>
-                                <td>
-                                    <span class="status-{{ scrape.status }}">
-                                        {{ scrape.get_status_display }}
-                                    </span>
-                                </td>
-                                <td>{{ scrape.created_at|date:"M d, Y H:i" }}</td>
-                                <td>
-                                    <a href="{% url 'scraper:detail' scrape.pk %}" class="btn btn-sm btn-outline-primary">View</a>
-                                    {% if scrape.status == 'success' %}
-                                        <a href="{% url 'scraper:download' scrape.pk %}" class="btn btn-sm btn-outline-success">Download</a>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        {% endif %}
+            <button type="submit" class="btn btn-primary btn-lg fw-bold">
+                <i class="bi bi-lightning-charge-fill me-2"></i>Execute
+            </button>
+        </form>
     </div>
 </div>
+
+{% if recent_scrapes %}
+    <hr class="my-5" style="border-color: var(--border-glow);">
+    
+    <div class="text-center">
+        <h3 class="display-6 fw-bold mb-4">> Recent Jobs</h3>
+    </div>
+
+    <div class="table-responsive">
+        {# UPDATED: table-dark fits the theme well with our new hover/stripe styles #}
+        <table class="table table-dark table-hover align-middle table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">TARGET_URL</th>
+                    <th scope="col">PAGE_TITLE</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">TIMESTAMP</th>
+                    <th scope="col" class="text-end">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for scrape in recent_scrapes %}
+                <tr>
+                    <td>
+                        <a href="{{ scrape.url }}" target="_blank">{{ scrape.url|truncatechars:25 }}</a>
+                    </td>
+                    <td>{{ scrape.title|default:"// no title //"|truncatechars:30 }}</td>
+                    <td>
+                        <span class="status-badge status-{{ scrape.status|lower }}">
+                            {{ scrape.get_status_display }}
+                        </span>
+                    </td>
+                    <td>{{ scrape.created_at|date:"Y-m-d H:i:s" }}</td>
+                    <td class="text-end">
+                        <a href="{% url 'scraper:detail' scrape.pk %}" class="btn btn-sm btn-outline-light">
+                            <i class="bi bi-eye-fill me-1"></i>View
+                        </a>
+                        {% if scrape.status == 'success' %}
+                            <a href="{% url 'scraper:download' scrape.pk %}" class="btn btn-sm btn-outline-light ms-1">
+                                <i class="bi bi-download me-1"></i>Download
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endif %}
 {% endblock %}
