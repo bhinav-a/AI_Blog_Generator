@@ -1,4 +1,4 @@
-# 🕷️ Django Web Scraper
+# 🕷️ Django Web Scraper:
 
 A clean and focused Django web application that extracts meaningful content from web pages, filtering out navigation clutter, ads, and irrelevant elements. Perfect for scraping educational content, articles, and tutorials.
 
