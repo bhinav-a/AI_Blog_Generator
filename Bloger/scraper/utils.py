@@ -59,9 +59,28 @@ class WebScraper:
             headings[f'h{i}'] = [tag.get_text().strip() for tag in heading_tags]
         return headings
 
-    def extract_paragraphs(self, soup):
+    def extract_clean_paragraphs(self, soup):
+    
+        for element in soup(['nav', 'header', 'footer', 'aside', 'script', 'style', 'noscript']):
+            element.decompose()
+        
+        # Remove common ad/navigation classes
+        ad_classes = ['ad', 'advertisement', 'sidebar', 'navigation', 'nav', 'menu', 'footer', 'header']
+        for class_name in ad_classes:
+            for element in soup.find_all(class_=lambda x: x and class_name in str(x).lower()):
+                element.decompose()
+        
+        # Extract paragraphs
         paragraphs = soup.find_all('p')
-        return [p.get_text().strip() for p in paragraphs if p.get_text().strip()]
+        clean_paragraphs = []
+        
+        for p in paragraphs:
+            text = p.get_text().strip()
+            # Filter out short, likely non-content paragraphs
+            if len(text) > 20 and not self.is_likely_navigation(text):
+                clean_paragraphs.append(text)
+        
+        return clean_paragraphs
 
     def extract_links(self, soup):
         links = []
@@ -100,6 +119,32 @@ class WebScraper:
         return meta_tags
 
     def count_words(self, soup):
-        text = soup.get_text()
-        words = text.split()
+        # Count words only from main content areas, not navigation
+        main_content = self.extract_main_content(soup)
+        words = main_content.split()
         return len(words)
+    
+    def is_likely_navigation(self, text):
+        """Check if text is likely navigation/menu content"""
+        nav_keywords = [
+            'home', 'about', 'contact', 'login', 'register', 'subscribe',
+            'menu', 'navigation', 'skip to', 'breadcrumb', 'previous', 'next',
+            'share on', 'follow us', 'copyright', '©', 'privacy policy',
+            'terms of service', 'cookie policy', 'all rights reserved'
+        ]
+        
+        text_lower = text.lower()
+        
+        # Check for navigation keywords
+        if any(keyword in text_lower for keyword in nav_keywords):
+            return True
+            
+        # Check if text is very short (likely navigation)
+        if len(text.split()) < 4:
+            return True
+            
+        # Check if text is mostly links/navigation patterns
+        if text.count('|') > 2 or text.count('»') > 0 or text.count('→') > 0:
+            return True
+            
+        return False
