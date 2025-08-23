@@ -46,6 +46,9 @@ def index(request):
     # Get recent scraping history
     recent_scrapes = mongo_client.get_recent_scrapes(10)
     
+    for scrape in recent_scrapes:
+        print(f"Scrape ID: '{scrape.get('id', 'MISSING')}', Type: {type(scrape.get('id', ''))}")
+    
     context = {
         'form': form,
         'recent_scrapes': recent_scrapes
