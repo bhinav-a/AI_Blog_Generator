@@ -1,14 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.http import JsonResponse, HttpResponse, Http404
-from django.core.files.base import ContentFile
 from django.urls import reverse
 from .models import ScrapedData
 from .forms import URLForm
 from .utils import WebScraper
 import json
-import tempfile
-import os
 
 def index(request):
     if request.method == 'POST':
@@ -32,18 +29,8 @@ def index(request):
                 scraped_data.save()
                 messages.error(request, f'Error scraping URL: {error}')
             else:
-                # Save JSON data to file
-                json_content = json.dumps(data, indent=2, ensure_ascii=False)
-                filename = f"scraped_{scraped_data.id}_{scraped_data.created_at.strftime('%Y%m%d_%H%M%S')}.json"
-                
-                scraped_data.json_file.save(
-                    filename,
-                    ContentFile(json_content.encode('utf-8')),
-                    save=False
-                )
-                scraped_data.title = data.get('title', 'No title')[:200]
-                scraped_data.status = 'success'
-                scraped_data.save()
+                # Save data directly to MongoDB
+                scraped_data.save_scraped_data(data)
                 
                 messages.success(request, 'Data scraped successfully!')
                 return redirect('scraper:detail', pk=scraped_data.pk)
@@ -63,12 +50,12 @@ def detail(request, pk):
     scraped_data = get_object_or_404(ScrapedData, pk=pk)
     
     json_content = None
-    if scraped_data.json_file and scraped_data.status == 'success':
+    if scraped_data.status == 'success':
         try:
-            with scraped_data.json_file.open('r') as f:
-                json_content = json.load(f)
+            # Get JSON directly from MongoDB
+            json_content = scraped_data.scraped_content
         except Exception as e:
-            messages.error(request, f'Error reading JSON file: {str(e)}')
+            messages.error(request, f'Error retrieving data: {str(e)}')
     
     context = {
         'scraped_data': scraped_data,
@@ -79,19 +66,26 @@ def detail(request, pk):
 def download_json(request, pk):
     scraped_data = get_object_or_404(ScrapedData, pk=pk)
     
-    if not scraped_data.json_file:
-        raise Http404("JSON file not found")
+    if scraped_data.status != 'success' or not scraped_data.scraped_content:
+        raise Http404("JSON data not found")
     
     try:
+        # Generate JSON content from MongoDB data
+        json_content = json.dumps(
+            scraped_data.scraped_content, 
+            indent=2, 
+            ensure_ascii=False
+        )
+        
         response = HttpResponse(
-            scraped_data.json_file.read(),
+            json_content,
             content_type='application/json'
         )
-        filename = f"scraped_data_{pk}.json"
+        filename = f"scraped_data_{pk}_{scraped_data.created_at.strftime('%Y%m%d_%H%M%S')}.json"
         response['Content-Disposition'] = f'attachment; filename="{filename}"'
         return response
-    except Exception:
-        raise Http404("Error accessing file")
+    except Exception as e:
+        raise Http404(f"Error accessing data: {str(e)}")
 
 def api_scrape(request):
     """API endpoint for scraping"""
@@ -103,15 +97,28 @@ def api_scrape(request):
             if not url:
                 return JsonResponse({'error': 'URL is required'}, status=400)
             
+            # Option: Save to MongoDB here too
+            scraped_data = ScrapedData.objects.create(
+                url=url,
+                status='pending'
+            )
+            
             scraper = WebScraper(url)
-            scraped_data, error = scraper.scrape()
+            scraped_content, error = scraper.scrape()
             
             if error:
+                scraped_data.status = 'error'
+                scraped_data.error_message = error
+                scraped_data.save()
                 return JsonResponse({'error': error}, status=400)
+            
+            # Save to MongoDB
+            scraped_data.save_scraped_data(scraped_content)
             
             return JsonResponse({
                 'success': True,
-                'data': scraped_data
+                'id': str(scraped_data.id),
+                'data': scraped_content
             })
             
         except json.JSONDecodeError:

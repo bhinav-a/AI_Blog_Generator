@@ -4,9 +4,7 @@ import json
 import os
 from urllib.parse import urljoin, urlparse
 from django.conf import settings
-from django.core.files.base import ContentFile
 from django.utils import timezone
-import tempfile
 
 class WebScraper:
     def __init__(self, url):
@@ -56,19 +54,30 @@ class WebScraper:
             headings[f'h{i}'] = [tag.get_text().strip() for tag in heading_tags]
         return headings
 
+    # Add the missing method that was causing the error
+    def extract_paragraphs(self, soup=None):
+        """Legacy method - delegates to extract_clean_paragraphs"""
+        if soup is None:
+            response = self.session.get(self.url, timeout=10)
+            soup = BeautifulSoup(response.content, 'html.parser')
+        
+        return self.extract_clean_paragraphs(soup)
+
     def extract_clean_paragraphs(self, soup):
-    
-        for element in soup(['nav', 'header', 'footer', 'aside', 'script', 'style', 'noscript']):
+        # Create a copy of soup to avoid modifying the original
+        soup_copy = BeautifulSoup(str(soup), 'html.parser')
+        
+        for element in soup_copy(['nav', 'header', 'footer', 'aside', 'script', 'style', 'noscript']):
             element.decompose()
         
         # Remove common ad/navigation classes
         ad_classes = ['ad', 'advertisement', 'sidebar', 'navigation', 'nav', 'menu', 'footer', 'header']
         for class_name in ad_classes:
-            for element in soup.find_all(class_=lambda x: x and class_name in str(x).lower()):
+            for element in soup_copy.find_all(class_=lambda x: x and class_name in str(x).lower()):
                 element.decompose()
         
         # Extract paragraphs
-        paragraphs = soup.find_all('p')
+        paragraphs = soup_copy.find_all('p')
         clean_paragraphs = []
         
         for p in paragraphs:
@@ -147,7 +156,9 @@ class WebScraper:
         return False
     
     def extract_main_content(self, soup):
-    
+        # Create a copy of soup to avoid modifying the original
+        soup_copy = BeautifulSoup(str(soup), 'html.parser')
+        
         main_selectors = [
             'main',
             'article', 
@@ -165,7 +176,7 @@ class WebScraper:
         main_content = ""
         
         for selector in main_selectors:
-            content_area = soup.select_one(selector)
+            content_area = soup_copy.select_one(selector)
             if content_area:
                 # Remove unwanted child elements
                 for unwanted in content_area(['script', 'style', 'nav', 'aside', 'footer', 'header']):
@@ -177,7 +188,7 @@ class WebScraper:
         
         # Fallback: get content from body, excluding common non-content areas
         if not main_content or len(main_content) < 100:
-            body = soup.find('body')
+            body = soup_copy.find('body')
             if body:
                 # Remove navigation, sidebar, footer elements
                 for element in body(['nav', 'header', 'footer', 'aside', 'script', 'style']):
