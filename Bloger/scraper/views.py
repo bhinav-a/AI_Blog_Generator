@@ -6,6 +6,8 @@ from .models import ScrapedData
 from .forms import URLForm
 from .utils import WebScraper
 import json
+from bson.objectid import ObjectId
+from django.core.exceptions import ValidationError
 
 def index(request):
     if request.method == 'POST':
@@ -33,13 +35,17 @@ def index(request):
                 scraped_data.save_scraped_data(data)
                 
                 messages.success(request, 'Data scraped successfully!')
-                return redirect('scraper:detail', pk=scraped_data.pk)
+                return redirect('scraper:detail', pk=str(scraped_data.pk))
     else:
         form = URLForm()
     
     # Get recent scraping history and filter out records with None pk
     all_scrapes = ScrapedData.objects.all()[:20]  # Get more than needed
     recent_scrapes = [scrape for scrape in all_scrapes if scrape.pk is not None][:10]
+    
+    # Convert ObjectId to string for template use
+    for scrape in recent_scrapes:
+        scrape.id_str = str(scrape.pk)
     
     context = {
         'form': form,
@@ -48,59 +54,83 @@ def index(request):
     return render(request, 'scraper/index.html', context)
 
 def detail(request, pk):
-    scraped_data = get_object_or_404(ScrapedData, pk=pk)
-    
-    json_content = None
-    if scraped_data.status == 'success':
-        try:
-            # Get content as dictionary
-            if hasattr(scraped_data, 'get_scraped_content'):
-                json_content = scraped_data.get_scraped_content()
-            else:
-                # Fallback for direct access (if stored as JSONField)
-                json_content = scraped_data.scraped_content
-                
-                # If it's a string, try to parse it
-                if isinstance(json_content, str):
-                    json_content = json.loads(json_content)
-        except Exception as e:
-            messages.error(request, f'Error retrieving data: {str(e)}')
-    
-    context = {
-        'scraped_data': scraped_data,
-        'json_content': json_content
-    }
-    return render(request, 'scraper/detail.html', context)
+    try:
+        # Try to convert string pk to ObjectId
+        if not isinstance(pk, ObjectId):
+            try:
+                object_id = ObjectId(pk)
+            except:
+                raise Http404("Invalid ID format")
+        else:
+            object_id = pk
+            
+        scraped_data = get_object_or_404(ScrapedData, pk=object_id)
+        
+        json_content = None
+        if scraped_data.status == 'success':
+            try:
+                # Get content as dictionary
+                if hasattr(scraped_data, 'get_scraped_content'):
+                    json_content = scraped_data.get_scraped_content()
+                else:
+                    # Fallback for direct access (if stored as JSONField)
+                    json_content = scraped_data.scraped_content
+                    
+                    # If it's a string, try to parse it
+                    if isinstance(json_content, str):
+                        json_content = json.loads(json_content)
+            except Exception as e:
+                messages.error(request, f'Error retrieving data: {str(e)}')
+        
+        context = {
+            'scraped_data': scraped_data,
+            'json_content': json_content
+        }
+        return render(request, 'scraper/detail.html', context)
+    except ValidationError:
+        raise Http404("Invalid ID format")
 
 def download_json(request, pk):
-    scraped_data = get_object_or_404(ScrapedData, pk=pk)
-    
-    if scraped_data.status != 'success':
-        raise Http404("JSON data not found")
-    
     try:
-        # Handle different storage approaches
-        content = scraped_data.scraped_content
-        
-        # If it's already a dict, convert to JSON string
-        if isinstance(content, dict):
-            json_content = json.dumps(content, indent=2, ensure_ascii=False)
-        # If it's a string, use it directly (assuming it's valid JSON)
-        elif isinstance(content, str):
-            json_content = content
+        # Try to convert string pk to ObjectId
+        if not isinstance(pk, ObjectId):
+            try:
+                object_id = ObjectId(pk)
+            except:
+                raise Http404("Invalid ID format")
         else:
-            # Fallback - try to convert whatever it is to JSON
-            json_content = json.dumps(content, indent=2, ensure_ascii=False)
+            object_id = pk
+            
+        scraped_data = get_object_or_404(ScrapedData, pk=object_id)
         
-        response = HttpResponse(
-            json_content,
-            content_type='application/json'
-        )
-        filename = f"scraped_data_{pk}_{scraped_data.created_at.strftime('%Y%m%d_%H%M%S')}.json"
-        response['Content-Disposition'] = f'attachment; filename="{filename}"'
-        return response
-    except Exception as e:
-        raise Http404(f"Error accessing data: {str(e)}")
+        if scraped_data.status != 'success':
+            raise Http404("JSON data not found")
+        
+        try:
+            # Handle different storage approaches
+            content = scraped_data.scraped_content
+            
+            # If it's already a dict, convert to JSON string
+            if isinstance(content, dict):
+                json_content = json.dumps(content, indent=2, ensure_ascii=False)
+            # If it's a string, use it directly (assuming it's valid JSON)
+            elif isinstance(content, str):
+                json_content = content
+            else:
+                # Fallback - try to convert whatever it is to JSON
+                json_content = json.dumps(content, indent=2, ensure_ascii=False)
+            
+            response = HttpResponse(
+                json_content,
+                content_type='application/json'
+            )
+            filename = f"scraped_data_{pk}_{scraped_data.created_at.strftime('%Y%m%d_%H%M%S')}.json"
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+            return response
+        except Exception as e:
+            raise Http404(f"Error accessing data: {str(e)}")
+    except ValidationError:
+        raise Http404("Invalid ID format")
 
 def api_scrape(request):
     """API endpoint for scraping"""
