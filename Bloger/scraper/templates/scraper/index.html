@@ -65,12 +65,12 @@
                     </td>
                     <td>{{ scrape.created_at|date:"Y-m-d H:i:s" }}</td>
                     <td class="text-end">
-                        {% if scrape.pk != None and scrape.pk != "None" %}
-                            <a href="{% url 'scraper:detail' scrape.pk %}" class="btn btn-sm btn-outline-light">
+                        {% if scrape.pk and scrape.pk != None and scrape.pk != "None" %}
+                            <a href="/detail/{{ scrape.pk }}/" class="btn btn-sm btn-outline-light">
                                 <i class="bi bi-eye-fill me-1"></i>View
                             </a>
                             {% if scrape.status == 'success' %}
-                                <a href="{% url 'scraper:download' scrape.pk %}" class="btn btn-sm btn-outline-light ms-1">
+                                <a href="/download/{{ scrape.pk }}/" class="btn btn-sm btn-outline-light ms-1">
                                     <i class="bi bi-download me-1"></i>Download
                                 </a>
                             {% endif %}
