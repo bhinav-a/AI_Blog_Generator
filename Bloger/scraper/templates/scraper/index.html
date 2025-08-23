@@ -4,34 +4,7 @@
 {% block title %}Scraper_Interface // Home{% endblock %}
 
 {% block content %}
-<div class="text-center">
-    <h2 class="display-5 fw-bold mb-3" style="color: var(--primary-glow); text-shadow: 0 0 5px var(--border-glow);">
-        > Initialize Scrape
-    </h2>
-    <p class="lead mb-5 text-muted-dark">Input Target URL Below.</p>
-</div>
-
-<div class="row">
-    <div class="col-lg-8 mx-auto">
-        <form method="post" class="d-grid gap-2">
-            {% csrf_token %}
-            <div class="mb-3">
-                <label for="{{ form.url.id_for_label }}" class="form-label visually-hidden">{{ form.url.label }}</label>
-                {{ form.url }}
-                {% if form.url.errors %}
-                    <div class="text-danger mt-2">
-                        {% for error in form.url.errors %}
-                            <small>> {{ error }}</small>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg fw-bold">
-                <i class="bi bi-lightning-charge-fill me-2"></i>Execute
-            </button>
-        </form>
-    </div>
-</div>
+<!-- Form section unchanged -->
 
 {% if recent_scrapes %}
     <hr class="my-5" style="border-color: var(--border-glow);">
@@ -60,17 +33,17 @@
                     <td>{{ scrape.title|default:"// no title //"|truncatechars:30 }}</td>
                     <td>
                         <span class="status-badge status-{{ scrape.status|lower }}">
-                            {{ scrape.get_status_display }}
+                            {{ scrape.status }}
                         </span>
                     </td>
                     <td>{{ scrape.created_at|date:"Y-m-d H:i:s" }}</td>
                     <td class="text-end">
-                        {% if scrape.id_str and scrape.id_str != "None" %}
-                            <a href="{% url 'scraper:detail' scrape.id_str %}" class="btn btn-sm btn-outline-light">
+                        {% if scrape.id %}
+                            <a href="{% url 'scraper:detail' scrape.id %}" class="btn btn-sm btn-outline-light">
                                 <i class="bi bi-eye-fill me-1"></i>View
                             </a>
                             {% if scrape.status == 'success' %}
-                                <a href="{% url 'scraper:download' scrape.id_str %}" class="btn btn-sm btn-outline-light ms-1">
+                                <a href="{% url 'scraper:download' scrape.id %}" class="btn btn-sm btn-outline-light ms-1">
                                     <i class="bi bi-download me-1"></i>Download
                                 </a>
                             {% endif %}

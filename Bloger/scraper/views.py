@@ -1,13 +1,15 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import JsonResponse, HttpResponse, Http404
 from django.urls import reverse
-from .models import ScrapedData
+# Import direct MongoDB client instead of Django model
+from .mongodb_client import MongoDBClient
 from .forms import URLForm
 from .utils import WebScraper
 import json
-from bson.objectid import ObjectId
-from django.core.exceptions import ValidationError
+
+# Initialize MongoDB client
+mongo_client = MongoDBClient()
 
 def index(request):
     if request.method == 'POST':
@@ -15,37 +17,34 @@ def index(request):
         if form.is_valid():
             url = form.cleaned_data['url']
             
-            # Create a new ScrapedData instance
-            scraped_data = ScrapedData.objects.create(
-                url=url,
-                status='pending'
-            )
-            
             # Perform scraping
             scraper = WebScraper(url)
             data, error = scraper.scrape()
             
             if error:
-                scraped_data.status = 'error'
-                scraped_data.error_message = error
-                scraped_data.save()
+                # Save error to MongoDB
+                document_id = mongo_client.save_scraped_data(
+                    url=url,
+                    data_dict={},
+                    status='error',
+                    error_message=error
+                )
                 messages.error(request, f'Error scraping URL: {error}')
             else:
-                # Save data directly to MongoDB
-                scraped_data.save_scraped_data(data)
+                # Save data to MongoDB
+                document_id = mongo_client.save_scraped_data(
+                    url=url,
+                    data_dict=data,
+                    status='success'
+                )
                 
                 messages.success(request, 'Data scraped successfully!')
-                return redirect('scraper:detail', pk=str(scraped_data.pk))
+                return redirect('scraper:detail', pk=document_id)
     else:
         form = URLForm()
     
-    # Get recent scraping history and filter out records with None pk
-    all_scrapes = ScrapedData.objects.all()[:20]  # Get more than needed
-    recent_scrapes = [scrape for scrape in all_scrapes if scrape.pk is not None][:10]
-    
-    # Convert ObjectId to string for template use
-    for scrape in recent_scrapes:
-        scrape.id_str = str(scrape.pk)
+    # Get recent scraping history
+    recent_scrapes = mongo_client.get_recent_scrapes(10)
     
     context = {
         'form': form,
@@ -54,83 +53,39 @@ def index(request):
     return render(request, 'scraper/index.html', context)
 
 def detail(request, pk):
-    try:
-        # Try to convert string pk to ObjectId
-        if not isinstance(pk, ObjectId):
-            try:
-                object_id = ObjectId(pk)
-            except:
-                raise Http404("Invalid ID format")
-        else:
-            object_id = pk
-            
-        scraped_data = get_object_or_404(ScrapedData, pk=object_id)
-        
-        json_content = None
-        if scraped_data.status == 'success':
-            try:
-                # Get content as dictionary
-                if hasattr(scraped_data, 'get_scraped_content'):
-                    json_content = scraped_data.get_scraped_content()
-                else:
-                    # Fallback for direct access (if stored as JSONField)
-                    json_content = scraped_data.scraped_content
-                    
-                    # If it's a string, try to parse it
-                    if isinstance(json_content, str):
-                        json_content = json.loads(json_content)
-            except Exception as e:
-                messages.error(request, f'Error retrieving data: {str(e)}')
-        
-        context = {
-            'scraped_data': scraped_data,
-            'json_content': json_content
-        }
-        return render(request, 'scraper/detail.html', context)
-    except ValidationError:
-        raise Http404("Invalid ID format")
+    document = mongo_client.get_scraped_data(pk)
+    
+    if not document:
+        raise Http404("Scraped data not found")
+    
+    context = {
+        'scraped_data': document,
+        'json_content': document.get('json_content', {})
+    }
+    return render(request, 'scraper/detail.html', context)
 
 def download_json(request, pk):
+    document = mongo_client.get_scraped_data(pk)
+    
+    if not document or document.get('status') != 'success':
+        raise Http404("JSON data not found")
+    
     try:
-        # Try to convert string pk to ObjectId
-        if not isinstance(pk, ObjectId):
-            try:
-                object_id = ObjectId(pk)
-            except:
-                raise Http404("Invalid ID format")
+        # Get JSON content
+        if 'json_content' in document:
+            json_content = json.dumps(document['json_content'], indent=2, ensure_ascii=False)
         else:
-            object_id = pk
-            
-        scraped_data = get_object_or_404(ScrapedData, pk=object_id)
+            json_content = document.get('scraped_content', '{}')
         
-        if scraped_data.status != 'success':
-            raise Http404("JSON data not found")
-        
-        try:
-            # Handle different storage approaches
-            content = scraped_data.scraped_content
-            
-            # If it's already a dict, convert to JSON string
-            if isinstance(content, dict):
-                json_content = json.dumps(content, indent=2, ensure_ascii=False)
-            # If it's a string, use it directly (assuming it's valid JSON)
-            elif isinstance(content, str):
-                json_content = content
-            else:
-                # Fallback - try to convert whatever it is to JSON
-                json_content = json.dumps(content, indent=2, ensure_ascii=False)
-            
-            response = HttpResponse(
-                json_content,
-                content_type='application/json'
-            )
-            filename = f"scraped_data_{pk}_{scraped_data.created_at.strftime('%Y%m%d_%H%M%S')}.json"
-            response['Content-Disposition'] = f'attachment; filename="{filename}"'
-            return response
-        except Exception as e:
-            raise Http404(f"Error accessing data: {str(e)}")
-    except ValidationError:
-        raise Http404("Invalid ID format")
+        response = HttpResponse(
+            json_content,
+            content_type='application/json'
+        )
+        filename = f"scraped_data_{pk}.json"
+        response['Content-Disposition'] = f'attachment; filename="{filename}"'
+        return response
+    except Exception as e:
+        raise Http404(f"Error accessing data: {str(e)}")
 
 def api_scrape(request):
     """API endpoint for scraping"""
@@ -142,27 +97,23 @@ def api_scrape(request):
             if not url:
                 return JsonResponse({'error': 'URL is required'}, status=400)
             
-            # Option: Save to MongoDB here too
-            scraped_data = ScrapedData.objects.create(
-                url=url,
-                status='pending'
-            )
-            
+            # Perform scraping
             scraper = WebScraper(url)
             scraped_content, error = scraper.scrape()
             
             if error:
-                scraped_data.status = 'error'
-                scraped_data.error_message = error
-                scraped_data.save()
                 return JsonResponse({'error': error}, status=400)
             
             # Save to MongoDB
-            scraped_data.save_scraped_data(scraped_content)
+            document_id = mongo_client.save_scraped_data(
+                url=url,
+                data_dict=scraped_content,
+                status='success'
+            )
             
             return JsonResponse({
                 'success': True,
-                'id': str(scraped_data.id),
+                'id': document_id,
                 'data': scraped_content
             })
             
