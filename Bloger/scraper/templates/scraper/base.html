@@ -229,6 +229,16 @@
             {% endfor %}
         {% endif %}
         
+        <!-- Workaround for download URL issue -->
+        <script>
+            function safeRedirect(url) {
+                if (url && url !== "#") {
+                    window.location.href = url;
+                }
+                return false;
+            }
+        </script>
+        
         <main>
             {% block content %}{% endblock %}
         </main>
