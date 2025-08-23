@@ -25,13 +25,19 @@ class ScrapedData(models.Model):
         ordering = ['-created_at']
         db_table = 'scraped_data'  # Collection name in MongoDB
 
+    def __str__(self):
+        return f"{self.url} - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
+    
+    @property
+    def id_str(self):
+        """Return the string representation of the ObjectId"""
+        return str(self.pk) if self.pk else None
+    
     def get_absolute_url(self):
         from django.urls import reverse
         if self.pk:
-            return reverse('scraper:detail', kwargs={'pk': self.pk})
+            return reverse('scraper:detail', kwargs={'pk': str(self.pk)})
         return '#'  # Fallback URL
-    def __str__(self):
-        return f"{self.url} - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
     
     def save_scraped_data(self, data_dict):
         """Save scraped data to MongoDB using TextField"""
@@ -51,7 +57,9 @@ class ScrapedData(models.Model):
         """Get scraped content as dictionary"""
         try:
             return json.loads(self.scraped_content)
-        except:
+        except Exception as e:
+            # More detailed error handling
+            print(f"Error parsing JSON content: {e}")
             return {}
     
     # Compatibility method to support existing code that uses json_file
