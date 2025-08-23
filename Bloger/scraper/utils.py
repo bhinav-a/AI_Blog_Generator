@@ -25,17 +25,14 @@ class WebScraper:
             
             # Extract various data points
             data = {
-                'url': self.url,
-                'title': self.extract_title(soup),
-                'meta_description': self.extract_meta_description(soup),
-                'headings': self.extract_headings(soup),
-                'paragraphs': self.extract_paragraphs(soup),
-                'links': self.extract_links(soup),
-                'images': self.extract_images(soup),
-                'meta_tags': self.extract_meta_tags(soup),
-                'word_count': self.count_words(soup),
-                'scraped_at': str(timezone.now())
-            }
+                    'url': self.url,
+                    'title': self.extract_title(soup),
+                    'main_content': self.extract_main_content(soup),
+                    'paragraphs': self.extract_clean_paragraphs(soup),
+                    'headings': self.extract_headings(soup),
+                    'word_count': self.count_words(soup),
+                    'scraped_at': str(timezone.now())
+                }
             
             return data, None
             
