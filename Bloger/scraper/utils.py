@@ -145,3 +145,44 @@ class WebScraper:
             return True
             
         return False
+    
+    def extract_main_content(self, soup):
+    
+        main_selectors = [
+            'main',
+            'article', 
+            '[role="main"]',
+            '.content',
+            '.main-content',
+            '.article-content',
+            '.post-content',
+            '.entry-content',
+            '.text',  # GfG specific
+            '#content',
+            '.container .row .col'  # Bootstrap pattern
+        ]
+        
+        main_content = ""
+        
+        for selector in main_selectors:
+            content_area = soup.select_one(selector)
+            if content_area:
+                # Remove unwanted child elements
+                for unwanted in content_area(['script', 'style', 'nav', 'aside', 'footer', 'header']):
+                    unwanted.decompose()
+                
+                main_content = content_area.get_text(strip=True, separator='\n\n')
+                if len(main_content) > 100:  # Ensure we got substantial content
+                    break
+        
+        # Fallback: get content from body, excluding common non-content areas
+        if not main_content or len(main_content) < 100:
+            body = soup.find('body')
+            if body:
+                # Remove navigation, sidebar, footer elements
+                for element in body(['nav', 'header', 'footer', 'aside', 'script', 'style']):
+                    element.decompose()
+                
+                main_content = body.get_text(strip=True, separator='\n\n')
+        
+        return main_content
