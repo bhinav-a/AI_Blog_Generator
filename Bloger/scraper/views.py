@@ -37,8 +37,9 @@ def index(request):
     else:
         form = URLForm()
     
-    # Get recent scraping history
-    recent_scrapes = ScrapedData.objects.all()[:10]
+    # Get recent scraping history and filter out records with None pk
+    all_scrapes = ScrapedData.objects.all()[:20]  # Get more than needed
+    recent_scrapes = [scrape for scrape in all_scrapes if scrape.pk is not None][:10]
     
     context = {
         'form': form,
@@ -52,8 +53,16 @@ def detail(request, pk):
     json_content = None
     if scraped_data.status == 'success':
         try:
-            # Get JSON using the new method
-            json_content = scraped_data.get_scraped_content()
+            # Get content as dictionary
+            if hasattr(scraped_data, 'get_scraped_content'):
+                json_content = scraped_data.get_scraped_content()
+            else:
+                # Fallback for direct access (if stored as JSONField)
+                json_content = scraped_data.scraped_content
+                
+                # If it's a string, try to parse it
+                if isinstance(json_content, str):
+                    json_content = json.loads(json_content)
         except Exception as e:
             messages.error(request, f'Error retrieving data: {str(e)}')
     
@@ -70,9 +79,21 @@ def download_json(request, pk):
         raise Http404("JSON data not found")
     
     try:
-        # Use the scraped_content directly (it's already a JSON string)
+        # Handle different storage approaches
+        content = scraped_data.scraped_content
+        
+        # If it's already a dict, convert to JSON string
+        if isinstance(content, dict):
+            json_content = json.dumps(content, indent=2, ensure_ascii=False)
+        # If it's a string, use it directly (assuming it's valid JSON)
+        elif isinstance(content, str):
+            json_content = content
+        else:
+            # Fallback - try to convert whatever it is to JSON
+            json_content = json.dumps(content, indent=2, ensure_ascii=False)
+        
         response = HttpResponse(
-            scraped_data.scraped_content,
+            json_content,
             content_type='application/json'
         )
         filename = f"scraped_data_{pk}_{scraped_data.created_at.strftime('%Y%m%d_%H%M%S')}.json"

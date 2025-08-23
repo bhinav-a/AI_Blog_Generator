@@ -25,6 +25,11 @@ class ScrapedData(models.Model):
         ordering = ['-created_at']
         db_table = 'scraped_data'  # Collection name in MongoDB
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        if self.pk:
+            return reverse('scraper:detail', kwargs={'pk': self.pk})
+        return '#'  # Fallback URL
     def __str__(self):
         return f"{self.url} - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
     
