@@ -52,8 +52,8 @@ def detail(request, pk):
     json_content = None
     if scraped_data.status == 'success':
         try:
-            # Get JSON directly from MongoDB
-            json_content = scraped_data.scraped_content
+            # Get JSON using the new method
+            json_content = scraped_data.get_scraped_content()
         except Exception as e:
             messages.error(request, f'Error retrieving data: {str(e)}')
     
@@ -66,19 +66,13 @@ def detail(request, pk):
 def download_json(request, pk):
     scraped_data = get_object_or_404(ScrapedData, pk=pk)
     
-    if scraped_data.status != 'success' or not scraped_data.scraped_content:
+    if scraped_data.status != 'success':
         raise Http404("JSON data not found")
     
     try:
-        # Generate JSON content from MongoDB data
-        json_content = json.dumps(
-            scraped_data.scraped_content, 
-            indent=2, 
-            ensure_ascii=False
-        )
-        
+        # Use the scraped_content directly (it's already a JSON string)
         response = HttpResponse(
-            json_content,
+            scraped_data.scraped_content,
             content_type='application/json'
         )
         filename = f"scraped_data_{pk}_{scraped_data.created_at.strftime('%Y%m%d_%H%M%S')}.json"

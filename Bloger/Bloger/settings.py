@@ -96,11 +96,9 @@ WSGI_APPLICATION = 'Bloger.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': os.environ.get('MONGODB_NAME', 'ai_blog_db'),  
+        'NAME': 'ai_blog_db',
         'CLIENT': {
-            'host': os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/ai_blog_db'),
-            'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1',
+            'host': os.environ.get('MONGODB_URI'),
         }
     }
 }

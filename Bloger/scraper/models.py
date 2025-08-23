@@ -1,4 +1,4 @@
-from djongo import models  # Change from django.db to djongo
+from djongo import models
 from django.utils import timezone
 import json
 
@@ -6,8 +6,8 @@ class ScrapedData(models.Model):
     url = models.URLField(max_length=500)
     title = models.CharField(max_length=200, blank=True)
     
-    # Replace FileField with JSONField to store directly in MongoDB
-    scraped_content = models.JSONField(default=dict, blank=True)
+    # Use TextField instead of JSONField for better compatibility
+    scraped_content = models.TextField(default="{}", blank=True)
     
     created_at = models.DateTimeField(default=timezone.now)
     status = models.CharField(max_length=20, choices=[
@@ -29,8 +29,8 @@ class ScrapedData(models.Model):
         return f"{self.url} - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
     
     def save_scraped_data(self, data_dict):
-        """Save scraped data directly to MongoDB"""
-        self.scraped_content = data_dict
+        """Save scraped data to MongoDB using TextField"""
+        self.scraped_content = json.dumps(data_dict)
         self.title = data_dict.get('title', 'No title')[:200]
         
         # Calculate word count if main_content exists
@@ -42,8 +42,15 @@ class ScrapedData(models.Model):
         self.status = 'success'
         self.save()
     
+    def get_scraped_content(self):
+        """Get scraped content as dictionary"""
+        try:
+            return json.loads(self.scraped_content)
+        except:
+            return {}
+    
     # Compatibility method to support existing code that uses json_file
     @property
     def json_file_content(self):
         """Return the content as if it were read from a file"""
-        return json.dumps(self.scraped_content)
+        return self.scraped_content
