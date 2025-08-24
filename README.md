@@ -2,7 +2,7 @@
 
 A clean and focused Django web application that extracts meaningful content from web pages, filtering out navigation clutter, ads, and irrelevant elements. Perfect for scraping educational content, articles, and tutorials.
 
-## 🌟 Features
+## 🌟 Features:
 
 - **Clean Content Extraction**: Focuses only on main content and meaningful paragraphs
 - **Smart Filtering**: Automatically removes navigation, ads, headers, and footers
